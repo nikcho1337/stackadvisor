@@ -19,7 +19,7 @@ const CATEGORY_ICONS: Record<Category, { svg: React.ReactNode; color: string; bg
   },
   dedicated: {
     color: "#0F172A", bg: "#F1F5F9",
-    svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="12" y2="15"/><circle cx="15" cy="15" r="1.5" fill="currentColor" stroke="none"/></svg>,
+    svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>,
   },
   storage: {
     color: "#7C3AED", bg: "#F5F3FF",
