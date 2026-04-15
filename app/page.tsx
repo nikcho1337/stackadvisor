@@ -1,65 +1,359 @@
+import Link from "next/link";
 import Image from "next/image";
+import NetworkBackground from "@/components/NetworkBackground";
+import CircuitBackground from "@/components/CircuitBackground";
+import ServerBackground from "@/components/ServerBackground";
+import { featuredTools, tools, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS, type Category } from "@/lib/tools";
+import { articles } from "@/lib/articles";
 
-export default function Home() {
+const CATEGORIES = Object.keys(CATEGORY_LABELS) as Category[];
+
+const CATEGORY_ICONS: Record<Category, string> = {
+  shared:    "🌐",
+  vps:       "⚡",
+  dedicated: "🖥",
+  storage:   "💾",
+  managed:   "🛡",
+};
+
+export default function HomePage() {
+  const latestArticles = articles.slice(0, 3);
+  // VPS Special ($3/mo) is the lead product — most compelling entry offer
+  const heroTool = featuredTools.find(t => t.slug === "interserver-vps-review") ?? featuredTools[0];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* ── HERO ────────────────────────────────────────────── */}
+      <section style={{
+        background: "linear-gradient(135deg, #fff 0%, #fdf9f6 60%, #fff8f3 100%)",
+        borderBottom: "1px solid var(--border)",
+        padding: "80px 0 72px",
+        position: "relative",
+        overflow: "hidden",
+      }}>
+        <NetworkBackground />
+        <div style={{
+          position: "absolute", top: "-100px", right: "-100px",
+          width: "500px", height: "500px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(242,101,34,0.1) 0%, transparent 70%)",
+          pointerEvents: "none", zIndex: 0,
+        }} />
+
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 440px", gap: "64px", alignItems: "center" }}>
+
+            {/* Left */}
+            <div>
+              <div className="eyebrow">Web Hosting · Cloud VPS · Dedicated Servers</div>
+
+              <h1 style={{ fontSize: "clamp(2.8rem, 6vw, 4.5rem)", marginBottom: "20px", lineHeight: "1.05" }}>
+                Find the Right Server<br />
+                <span style={{ color: "var(--accent)" }}>for Your Project.</span>
+              </h1>
+
+              <p style={{ fontSize: "1.1rem", color: "var(--fg-body)", lineHeight: "1.8", maxWidth: "500px", marginBottom: "36px" }}>
+                In-depth benchmarks of web hosting, cloud VPS, dedicated servers, and storage providers — so you pick the right infrastructure, not just the cheapest ad.
+              </p>
+
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <Link href="/reviews" className="btn-primary">
+                  Compare Providers →
+                </Link>
+                <Link href="/blog" className="btn-outline">
+                  Read Hosting Guides
+                </Link>
+              </div>
+
+              {/* Trust bar */}
+              <div style={{ display: "flex", gap: "32px", marginTop: "44px", paddingTop: "32px", borderTop: "1px solid var(--border)" }}>
+                {[
+                  { value: `${tools.length}+`, label: "Providers Reviewed" },
+                  { value: `${articles.length}`, label: "Hosting Guides" },
+                  { value: "100%", label: "Independent" },
+                ].map((s) => (
+                  <div key={s.label}>
+                    <div style={{ fontFamily: "var(--font-archivo), sans-serif", fontWeight: 900, fontSize: "1.75rem", color: "var(--fg)", letterSpacing: "-0.03em" }}>
+                      {s.value}
+                    </div>
+                    <div className="label">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — Hero feature card */}
+            {heroTool && (
+              <div style={{
+                background: "#fff",
+                border: "2px solid var(--accent)",
+                borderRadius: "16px",
+                padding: "32px",
+                boxShadow: "0 8px 40px rgba(242,101,34,0.12), 0 2px 8px rgba(0,0,0,0.06)",
+              }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "20px" }}>
+                  <span className="badge badge-orange">{heroTool.badge}</span>
+                  <span className="label">{CATEGORY_LABELS[heroTool.category]}</span>
+                </div>
+
+                <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "16px" }}>
+                  <div style={{ width: "48px", height: "48px", borderRadius: "10px", background: heroTool.logoBg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, overflow: "hidden" }}>
+                    <Image
+                      src={heroTool.heroImage}
+                      alt={heroTool.heroImageAlt}
+                      width={36}
+                      height={36}
+                      style={{ objectFit: "contain" }}
+                      unoptimized
+                    />
+                  </div>
+                  <div>
+                    <h2 style={{ fontSize: "1.4rem", margin: 0 }}>{heroTool.name}</h2>
+                    <div style={{ display: "flex", alignItems: "center", gap: "4px", marginTop: "2px" }}>
+                      {"★★★★★".split("").map((_s, i) => (
+                        <span key={i} style={{ color: "#F59E0B", fontSize: "0.85rem" }}>★</span>
+                      ))}
+                      <span className="label" style={{ marginLeft: "4px" }}>{heroTool.rating.toFixed(1)}/5.0</span>
+                    </div>
+                  </div>
+                </div>
+
+                <p style={{ fontSize: "0.9rem", color: "var(--fg-body)", lineHeight: "1.7", marginBottom: "20px" }}>
+                  {heroTool.tagline}
+                </p>
+
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "24px" }}>
+                  {heroTool.specs.slice(0, 4).map((row) => (
+                    <div key={row.label} style={{ padding: "10px 12px", background: "#FEF3EC", borderRadius: "8px" }}>
+                      <div className="label" style={{ color: "var(--accent-dark)", marginBottom: "2px" }}>{row.label}</div>
+                      <div style={{ fontWeight: 700, fontSize: "0.9rem", color: "var(--fg)" }}>{row.value}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <a
+                  href={heroTool.affiliateHref}
+                  target="_blank" rel="noopener noreferrer sponsored"
+                  className="btn-primary"
+                  style={{ width: "100%", justifyContent: "center", borderRadius: "8px" }}
+                >
+                  {heroTool.affiliateCta} →
+                </a>
+                <Link href={`/reviews/${heroTool.slug}`} style={{ display: "block", textAlign: "center", marginTop: "10px", fontSize: "0.82rem", color: "var(--fg-dim)" }}>
+                  Read our full review
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* ── PROVIDER LOGOS STRIP ────────────────────────────────── */}
+      <section style={{ background: "var(--bg-white)", borderBottom: "1px solid var(--border)", padding: "20px 0" }}>
+        <div className="container">
+          <div style={{ display: "flex", alignItems: "center", gap: "28px", justifyContent: "center", flexWrap: "wrap" }}>
+            <span className="label" style={{ color: "var(--fg-muted)", whiteSpace: "nowrap" }}>Providers we&apos;ve reviewed:</span>
+            {tools.map((tool) => (
+              <Link key={tool.slug} href={`/reviews/${tool.slug}`} style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "8px" }}>
+                <div style={{
+                  width: "26px", height: "26px", borderRadius: "6px",
+                  background: tool.logoBg,
+                  display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, overflow: "hidden",
+                }}>
+                  <Image
+                    src={tool.heroImage}
+                    alt={tool.heroImageAlt}
+                    width={20}
+                    height={20}
+                    style={{ objectFit: "contain" }}
+                    unoptimized
+                  />
+                </div>
+                <span style={{ fontWeight: 600, fontSize: "0.875rem", color: tool.logoFg }}>{tool.shortName}</span>
+              </Link>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* ── FEATURED PROVIDERS ──────────────────────────────────── */}
+      <section className="section" style={{ background: "var(--bg-dark)", position: "relative", overflow: "hidden" }}>
+        <ServerBackground />
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "36px" }}>
+            <div>
+              <div className="eyebrow" style={{ color: "#4ADE80" }}>Top Picks</div>
+              <h2 style={{ fontSize: "2rem", color: "#fff" }}>Reviewed & Benchmarked</h2>
+            </div>
+            <Link href="/reviews" style={{ fontSize: "0.875rem", fontWeight: 600, color: "#4ADE80" }}>
+              See all reviews →
+            </Link>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
+            {featuredTools.slice(0, 6).map((tool) => (
+              <Link key={tool.slug} href={`/reviews/${tool.slug}`} style={{ textDecoration: "none" }}>
+                <div className="card" style={{ padding: "0", height: "100%", display: "flex", flexDirection: "column", overflow: "hidden" }}>
+                  {/* Card header */}
+                  <div style={{
+                    height: "110px",
+                    background: tool.logoBg,
+                    display: "flex", alignItems: "center", justifyContent: "space-between",
+                    padding: "0 24px",
+                    position: "relative", overflow: "hidden",
+                  }}>
+                    <div style={{
+                      position: "absolute", left: "-28px", top: "-28px",
+                      width: "130px", height: "130px", borderRadius: "50%",
+                      background: `${tool.logoFg}18`,
+                      pointerEvents: "none",
+                    }} />
+                    <div style={{ position: "relative", zIndex: 1, width: "80px", height: "64px", flexShrink: 0 }}>
+                      <Image
+                        src={tool.heroImage}
+                        alt={tool.heroImageAlt}
+                        fill
+                        sizes="80px"
+                        style={{ objectFit: "contain", objectPosition: "left center", mixBlendMode: "multiply" }}
+                        unoptimized
+                      />
+                    </div>
+                    <div style={{ textAlign: "right", position: "relative", zIndex: 1 }}>
+                      <div style={{
+                        fontFamily: "var(--font-archivo), sans-serif", fontWeight: 900,
+                        fontSize: "2.2rem", color: tool.logoFg, letterSpacing: "-0.03em", lineHeight: 1,
+                      }}>
+                        {tool.rating.toFixed(1)}
+                      </div>
+                      <div style={{ fontSize: "0.72rem", fontWeight: 600, color: tool.logoFg, opacity: 0.65, letterSpacing: "0.04em" }}>/5.0</div>
+                    </div>
+                  </div>
+
+                  {/* Card body */}
+                  <div style={{ padding: "20px 24px", display: "flex", flexDirection: "column", gap: "10px", flexGrow: 1 }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                      <span className={`badge badge-${tool.badgeColor}`}>{tool.badge}</span>
+                      <span className="label">{CATEGORY_LABELS[tool.category]}</span>
+                    </div>
+                    <h3 style={{ fontSize: "1.1rem" }}>{tool.name}</h3>
+                    <p style={{ fontSize: "0.855rem", color: "var(--fg-body)", lineHeight: "1.6", flexGrow: 1 }}>
+                      {tool.tagline}
+                    </p>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: "12px", borderTop: "1px solid var(--border)" }}>
+                      <span className="price-tag">{tool.price}</span>
+                      <span style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--accent)" }}>Read →</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── HOSTING GUIDES ──────────────────────────────────────── */}
+      <section className="section" style={{ background: "var(--bg-white)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+        <div className="container">
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "36px" }}>
+            <div>
+              <div className="eyebrow">Hosting Guides</div>
+              <h2 style={{ fontSize: "2rem" }}>Make the Right Infrastructure Decision</h2>
+            </div>
+            <Link href="/blog" style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--accent)" }}>
+              All guides →
+            </Link>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px" }}>
+            {latestArticles.map((article) => (
+              <Link key={article.slug} href={`/blog/${article.slug}`} style={{ textDecoration: "none" }}>
+                <div className="card" style={{ height: "100%", display: "flex", flexDirection: "column", overflow: "hidden" }}>
+                  <div style={{ position: "relative", height: "160px", flexShrink: 0 }}>
+                    <Image
+                      src={article.image}
+                      alt={article.imageAlt}
+                      fill
+                      sizes="(max-width: 1200px) 33vw, 380px"
+                      style={{ objectFit: "cover", objectPosition: article.imagePosition ?? "center" }}
+                    />
+                    <div style={{
+                      position: "absolute", inset: 0,
+                      background: "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.4) 100%)",
+                    }} />
+                    <div style={{ position: "absolute", bottom: "12px", left: "12px" }}>
+                      <span className="badge badge-orange">{article.category}</span>
+                    </div>
+                  </div>
+
+                  <div style={{ padding: "20px 22px", display: "flex", flexDirection: "column", gap: "10px", flexGrow: 1 }}>
+                    <span className="label">{article.readTime}</span>
+                    <h3 style={{ fontSize: "1rem", lineHeight: "1.4" }}>{article.title}</h3>
+                    <p style={{ fontSize: "0.855rem", color: "var(--fg-body)", lineHeight: "1.65", flexGrow: 1 }}>
+                      {article.excerpt}
+                    </p>
+                    <span style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--accent)" }}>Read guide →</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CATEGORIES ──────────────────────────────────────────── */}
+      <section className="section" style={{ background: "var(--bg)", position: "relative", overflow: "hidden" }}>
+        <CircuitBackground />
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <div className="eyebrow" style={{ justifyContent: "center" }}>Browse by Category</div>
+            <h2 style={{ fontSize: "2rem" }}>What type of hosting do you need?</h2>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "14px" }}>
+            {CATEGORIES.map((cat) => (
+              <Link key={cat} href={`/categories/${cat}`} style={{ textDecoration: "none" }}>
+                <div className="card" style={{ padding: "28px 20px", textAlign: "center", height: "100%", display: "flex", flexDirection: "column", gap: "10px", alignItems: "center" }}>
+                  <span style={{ fontSize: "2rem" }}>{CATEGORY_ICONS[cat]}</span>
+                  <div style={{ fontFamily: "var(--font-archivo), sans-serif", fontWeight: 900, fontSize: "0.95rem", color: "var(--fg)", letterSpacing: "-0.01em" }}>
+                    {CATEGORY_LABELS[cat]}
+                  </div>
+                  <p style={{ fontSize: "0.78rem", color: "var(--fg-dim)", lineHeight: "1.5" }}>
+                    {CATEGORY_DESCRIPTIONS[cat]}
+                  </p>
+                  <span style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--accent)", marginTop: "auto" }}>
+                    {tools.filter(t => t.category === cat).length} reviews →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── TRUST SECTION ───────────────────────────────────────── */}
+      <section style={{ background: "var(--bg-dark)", padding: "72px 0" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: "48px" }}>
+            <h2 style={{ fontSize: "2rem", color: "#fff" }}>Why Developers Trust StackAdvisor</h2>
+            <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)", marginTop: "12px" }}>
+              We benchmark before we recommend. No free trials, no vendor-sponsored content.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "24px" }}>
+            {[
+              { icon: "📊", heading: "Real Benchmark Data", body: "Every review includes actual sysbench CPU scores, fio disk benchmarks, and network throughput numbers — not just specs copied from a provider's marketing page." },
+              { icon: "💸", heading: "Full Cost Transparency", body: "We document renewal pricing, bandwidth overages, and add-on costs. The number you see in a review is what you'll actually pay — not a promotional headline rate." },
+              { icon: "🔧", heading: "Built by Practitioners", body: "Our reviews are written by engineers who run production infrastructure. We care about uptime SLAs, support quality, and egress pricing because we pay those bills ourselves." },
+            ].map((item) => (
+              <div key={item.heading} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "12px", padding: "28px" }}>
+                <span style={{ fontSize: "1.8rem", display: "block", marginBottom: "14px" }}>{item.icon}</span>
+                <h3 style={{ fontSize: "1.1rem", color: "#fff", marginBottom: "10px" }}>{item.heading}</h3>
+                <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.5)", lineHeight: "1.75", margin: 0 }}>{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
