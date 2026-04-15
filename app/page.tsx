@@ -148,27 +148,37 @@ export default function HomePage() {
       </section>
 
       {/* ── PROVIDER LOGOS STRIP ────────────────────────────────── */}
-      <section style={{ background: "var(--bg-white)", borderBottom: "1px solid var(--border)", padding: "20px 0" }}>
+      <section style={{ background: "var(--bg-white)", borderBottom: "1px solid var(--border)", padding: "14px 0" }}>
         <div className="container">
-          <div style={{ display: "flex", alignItems: "center", gap: "28px", justifyContent: "center", flexWrap: "wrap" }}>
-            <span className="label" style={{ color: "var(--fg-muted)", whiteSpace: "nowrap" }}>Providers we&apos;ve reviewed:</span>
+          <div style={{ display: "flex", alignItems: "center", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+            <span className="label" style={{ color: "var(--fg-muted)", whiteSpace: "nowrap", marginRight: "8px" }}>Tested &amp; reviewed:</span>
             {tools.map((tool) => (
-              <Link key={tool.slug} href={`/reviews/${tool.slug}`} style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "8px" }}>
+              <Link key={tool.slug} href={`/reviews/${tool.slug}`} style={{ textDecoration: "none" }}>
                 <div style={{
-                  width: "26px", height: "26px", borderRadius: "6px",
-                  background: tool.logoBg,
-                  display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, overflow: "hidden",
+                  display: "flex", alignItems: "center", gap: "10px",
+                  padding: "7px 14px 7px 8px",
+                  border: "1px solid var(--border)",
+                  borderRadius: "10px",
+                  background: "#fff",
                 }}>
-                  <Image
-                    src={tool.heroImage}
-                    alt={tool.heroImageAlt}
-                    width={20}
-                    height={20}
-                    style={{ objectFit: "contain" }}
-                    unoptimized
-                  />
+                  {/* Logo */}
+                  <div style={{
+                    width: "30px", height: "30px", borderRadius: "7px",
+                    background: tool.logoBg,
+                    display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, overflow: "hidden",
+                  }}>
+                    <Image src={tool.heroImage} alt={tool.heroImageAlt} width={22} height={22} style={{ objectFit: "contain" }} unoptimized />
+                  </div>
+                  {/* Name + meta */}
+                  <div>
+                    <div style={{ fontWeight: 700, fontSize: "0.82rem", color: "var(--fg)", lineHeight: 1.2 }}>{tool.shortName}</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "2px" }}>
+                      <span style={{ fontSize: "0.72rem", fontWeight: 700, color: tool.logoFg }}>★ {tool.rating.toFixed(1)}</span>
+                      <span style={{ fontSize: "0.7rem", color: "var(--fg-muted)" }}>·</span>
+                      <span style={{ fontSize: "0.72rem", fontWeight: 600, color: "var(--fg-dim)" }}>{tool.price}</span>
+                    </div>
+                  </div>
                 </div>
-                <span style={{ fontWeight: 600, fontSize: "0.875rem", color: tool.logoFg }}>{tool.shortName}</span>
               </Link>
             ))}
           </div>
