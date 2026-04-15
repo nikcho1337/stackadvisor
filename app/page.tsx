@@ -308,26 +308,27 @@ export default function HomePage() {
             {/* ── ServerSP: Xeon E5 ── */}
             <a href="https://manager.serversp.com/aff.php?aff=17" target="_blank" rel="noopener noreferrer sponsored" style={{ textDecoration: "none" }}>
               <div className="card" style={{ height: "100%", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                <div style={{ background: "#16A34A", padding: "8px 16px", textAlign: "center", fontSize: "0.7rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#fff" }}>
-                  Ready Servers
-                </div>
-                <div style={{ padding: "20px 20px 0" }}>
-                  <h3 style={{ fontSize: "1.15rem", marginBottom: "6px" }}>Dell Xeon E5 Series</h3>
-                  <p style={{ fontSize: "0.8rem", color: "var(--fg-dim)", lineHeight: "1.6", marginBottom: "14px" }}>
-                    Enterprise-grade servers pre-configured and ready to deploy — no waiting, no hassle.
-                  </p>
-                  {/* Dell logo */}
-                  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100px", marginBottom: "14px" }}>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Dell_Logo.png/320px-Dell_Logo.png" alt="Dell" style={{ height: "60px", objectFit: "contain" }} />
+                <div style={{ padding: "20px 20px 0", flexGrow: 1 }}>
+                  <h3 style={{ fontSize: "1.15rem", color: "#2563EB", textAlign: "center", marginBottom: "4px" }}>Dell Xeon E5 Series</h3>
+                  <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
+                    <span style={{ fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#2563EB", background: "#EFF6FF", padding: "2px 10px", borderRadius: "20px" }}>Intel Xeon E5</span>
                   </div>
-                  <div style={{ fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#2563EB", marginBottom: "8px" }}>Pre-Configured Servers</div>
-                  {["Up to: 2x Intel Xeon E5", "512GB DDR4 ECC", "10x SSD SATA / 4x SSD NVMe", "HW RAID 0, 1, 5, 6, 10, 50, 60", "iDRAC 8 Enterprise", "Redundant Power Supply"].map((f, i) => (
-                    <div key={i} style={{ fontSize: "0.8rem", color: "var(--fg-body)", lineHeight: "1.9", fontWeight: i === 0 ? 400 : 600 }}>{f}</div>
+                  <div style={{ textAlign: "center", marginBottom: "16px" }}>
+                    <div style={{ fontSize: "2rem", fontWeight: 900, color: "#2563EB", fontFamily: "var(--font-archivo), sans-serif", letterSpacing: "-0.03em" }}>$169</div>
+                    <div style={{ fontSize: "0.7rem", color: "var(--fg-muted)" }}>Starting price / mo</div>
+                  </div>
+                  {["2x Intel Xeon E5", "512GB DDR4 ECC", "10x SSD SATA / 4x SSD NVMe", "HW RAID + BBU", "iDRAC 8 Enterprise", "Redundant Power Supply"].map((f, i) => (
+                    <div key={i} style={{ fontSize: "0.82rem", color: "var(--fg-body)", padding: "7px 0", borderTop: "1px solid var(--border)", textAlign: "center" }}>{f}</div>
                   ))}
                 </div>
-                <div style={{ padding: "16px 20px 20px", marginTop: "auto" }}>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", padding: "11px", background: "#2563EB", color: "#fff", borderRadius: "var(--radius)", fontWeight: 700, fontSize: "0.875rem" }}>
-                    🔍 View Details
+                <div style={{ padding: "16px 20px 20px" }}>
+                  <div style={{ textAlign: "center", marginBottom: "12px" }}>
+                    <span style={{ fontSize: "0.78rem", color: "var(--fg-dim)" }}>Starting at: </span>
+                    <span style={{ fontSize: "1.5rem", fontWeight: 900, color: "#2563EB", fontFamily: "var(--font-archivo), sans-serif" }}>$169</span>
+                    <span style={{ fontSize: "0.78rem", color: "var(--fg-dim)" }}>/mo</span>
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "11px", background: "#2563EB", color: "#fff", borderRadius: "var(--radius)", fontWeight: 700, fontSize: "0.875rem", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+                    Get This Server
                   </div>
                   <div style={{ fontSize: "0.68rem", color: "var(--fg-muted)", textAlign: "center", marginTop: "6px" }}>ServerSP · Miami + Brazil</div>
                 </div>
@@ -337,25 +338,27 @@ export default function HomePage() {
             {/* ── ServerSP: AMD EPYC ── */}
             <a href="https://manager.serversp.com/aff.php?aff=17" target="_blank" rel="noopener noreferrer sponsored" style={{ textDecoration: "none" }}>
               <div className="card" style={{ height: "100%", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                <div style={{ background: "#16A34A", padding: "8px 16px", textAlign: "center", fontSize: "0.7rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#fff" }}>
-                  AMD Powerhouse
-                </div>
-                <div style={{ padding: "20px 20px 0" }}>
-                  <h3 style={{ fontSize: "1.15rem", marginBottom: "6px" }}>Dell R6525 / R7425</h3>
-                  <p style={{ fontSize: "0.8rem", color: "var(--fg-dim)", lineHeight: "1.6", marginBottom: "14px" }}>
-                    High-capacity AMD servers ideal for virtualization and demanding workloads.
-                  </p>
-                  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100px", marginBottom: "14px" }}>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Dell_Logo.png/320px-Dell_Logo.png" alt="Dell" style={{ height: "60px", objectFit: "contain" }} />
+                <div style={{ padding: "20px 20px 0", flexGrow: 1 }}>
+                  <h3 style={{ fontSize: "1.15rem", color: "#2563EB", textAlign: "center", marginBottom: "4px" }}>Dell R6525 / R7425</h3>
+                  <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
+                    <span style={{ fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#2563EB", background: "#EFF6FF", padding: "2px 10px", borderRadius: "20px" }}>AMD EPYC</span>
                   </div>
-                  <div style={{ fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#2563EB", marginBottom: "8px" }}>Fully-Customized Hardware</div>
-                  {["Up to: 2x AMD EPYC Zen 1, 2 & 3Gen.", "4TB DDR4 ECC", "24x SSD NVMe / SAS / SATA", "HW RAID 0, 1, 5, 6, 10, 50, 60", "iDRAC 9 Enterprise", "Redundant Power Supply"].map((f, i) => (
-                    <div key={i} style={{ fontSize: "0.8rem", color: "var(--fg-body)", lineHeight: "1.9", fontWeight: i === 0 ? 400 : 600 }}>{f}</div>
+                  <div style={{ textAlign: "center", marginBottom: "16px" }}>
+                    <div style={{ fontSize: "2rem", fontWeight: 900, color: "#2563EB", fontFamily: "var(--font-archivo), sans-serif", letterSpacing: "-0.03em" }}>$629</div>
+                    <div style={{ fontSize: "0.7rem", color: "var(--fg-muted)" }}>Starting price / mo</div>
+                  </div>
+                  {["2x AMD EPYC Zen 1, 2 & 3Gen.", "4TB DDR4 ECC", "24x SSD NVMe / SAS / SATA", "HW RAID + BBU", "iDRAC 9 Enterprise", "Redundant Power Supply"].map((f, i) => (
+                    <div key={i} style={{ fontSize: "0.82rem", color: "var(--fg-body)", padding: "7px 0", borderTop: "1px solid var(--border)", textAlign: "center" }}>{f}</div>
                   ))}
                 </div>
-                <div style={{ padding: "16px 20px 20px", marginTop: "auto" }}>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", padding: "11px", background: "#2563EB", color: "#fff", borderRadius: "var(--radius)", fontWeight: 700, fontSize: "0.875rem" }}>
-                    🔍 View Details
+                <div style={{ padding: "16px 20px 20px" }}>
+                  <div style={{ textAlign: "center", marginBottom: "12px" }}>
+                    <span style={{ fontSize: "0.78rem", color: "var(--fg-dim)" }}>Starting at: </span>
+                    <span style={{ fontSize: "1.5rem", fontWeight: 900, color: "#2563EB", fontFamily: "var(--font-archivo), sans-serif" }}>$629</span>
+                    <span style={{ fontSize: "0.78rem", color: "var(--fg-dim)" }}>/mo</span>
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "11px", background: "#2563EB", color: "#fff", borderRadius: "var(--radius)", fontWeight: 700, fontSize: "0.875rem", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+                    Get This Server
                   </div>
                   <div style={{ fontSize: "0.68rem", color: "var(--fg-muted)", textAlign: "center", marginTop: "6px" }}>ServerSP · Miami + Brazil</div>
                 </div>
