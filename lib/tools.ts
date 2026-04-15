@@ -64,6 +64,16 @@ export interface Tool {
   affiliateCta: string;
   featured: boolean;
   locations: Location[];
+  hardwareBanner?: {
+    badge: string;
+    title: string;
+    description: string;
+    image: string;
+    imageAlt: string;
+    featuresHeading: string;
+    features: string[];
+    ctaLabel: string;
+  };
 }
 
 const INTERSERVER_AFFILIATE = "https://www.interserver.net/r/1063142";
@@ -429,6 +439,23 @@ export const tools: Tool[] = [
     affiliateCta: "Get ServerSP Dedicated — from $169/mo",
     featured: true,
     locations: ["us", "latam"],
+    hardwareBanner: {
+      badge: "Best Value",
+      title: "Dell R630 / 730XD",
+      description: "Affordable servers delivering solid performance and reliability, ideal for small/medium businesses.",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80",
+      imageAlt: "Dell PowerEdge R630 server",
+      featuresHeading: "Fully-Customized Hardware",
+      features: [
+        "Up to: **2x Intel Xeon E5 V4**",
+        "**3TB** DDR4 ECC",
+        "**24x SSD SATA** / 4x SSD NVMe",
+        "**HW RAID** 0, 1, 5, 6, 10, 50, 60",
+        "**iDRAC 8** Enterprise",
+        "Redundant **Power Supply**",
+      ],
+      ctaLabel: "View Details",
+    },
   },
 
 ];

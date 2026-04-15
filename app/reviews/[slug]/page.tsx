@@ -354,6 +354,71 @@ export default async function ReviewPage({ params }: Props) {
                 </a>
               </div>
 
+              {/* Hardware banner */}
+              {tool.hardwareBanner && (
+                <div style={{
+                  border: "1px solid var(--border)",
+                  borderRadius: "var(--radius)",
+                  overflow: "hidden",
+                  background: "#fff",
+                }}>
+                  {/* Badge header */}
+                  <div style={{
+                    background: "var(--green)",
+                    padding: "8px 16px",
+                    textAlign: "center",
+                    fontSize: "0.72rem", fontWeight: 700,
+                    textTransform: "uppercase", letterSpacing: "0.1em",
+                    color: "#fff",
+                  }}>
+                    {tool.hardwareBanner.badge}
+                  </div>
+
+                  <div style={{ padding: "20px" }}>
+                    <h3 style={{ fontSize: "1.1rem", marginBottom: "6px" }}>{tool.hardwareBanner.title}</h3>
+                    <p style={{ fontSize: "0.8rem", color: "var(--fg-dim)", lineHeight: "1.6", marginBottom: "14px" }}>
+                      {tool.hardwareBanner.description}
+                    </p>
+
+                    {/* Server image */}
+                    <div style={{ borderRadius: "6px", overflow: "hidden", marginBottom: "16px", height: "140px", position: "relative" }}>
+                      <img
+                        src={tool.hardwareBanner.image}
+                        alt={tool.hardwareBanner.imageAlt}
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      />
+                    </div>
+
+                    {/* Features */}
+                    <div style={{ marginBottom: "16px" }}>
+                      <div style={{ fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--accent)", marginBottom: "10px" }}>
+                        {tool.hardwareBanner.featuresHeading}
+                      </div>
+                      {tool.hardwareBanner.features.map((f) => (
+                        <div key={f} style={{ fontSize: "0.8rem", color: "var(--fg-body)", lineHeight: "1.8" }}
+                          dangerouslySetInnerHTML={{ __html: f.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>") }}
+                        />
+                      ))}
+                    </div>
+
+                    {/* CTA */}
+                    <a
+                      href={tool.affiliateHref}
+                      target="_blank" rel="noopener noreferrer sponsored"
+                      style={{
+                        display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
+                        width: "100%", padding: "11px 16px",
+                        background: "#2563EB", color: "#fff",
+                        fontWeight: 700, fontSize: "0.875rem",
+                        borderRadius: "var(--radius)", textDecoration: "none",
+                      }}
+                    >
+                      🔍 {tool.hardwareBanner.ctaLabel}
+                    </a>
+                  </div>
+                </div>
+              )}
+
               {tool.alternatives.length > 0 && (
                 <div className="card" style={{ padding: "24px" }}>
                   <div className="label" style={{ marginBottom: "14px" }}>Alternatives to Consider</div>
