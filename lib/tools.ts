@@ -433,10 +433,12 @@ export const tools: Tool[] = [
 
 ];
 
-export const featuredTools = tools.filter((t) => t.featured);
+const byRating = (a: Tool, b: Tool) => b.rating - a.rating;
+
+export const featuredTools = tools.filter((t) => t.featured).sort(byRating);
 export function getToolBySlug(slug: string) { return tools.find((t) => t.slug === slug); }
-export function getToolsByCategory(cat: Category) { return tools.filter((t) => t.category === cat); }
-export function getToolsByLocation(loc: Location) { return tools.filter((t) => t.locations.includes(loc)); }
+export function getToolsByCategory(cat: Category) { return tools.filter((t) => t.category === cat).sort(byRating); }
+export function getToolsByLocation(loc: Location) { return tools.filter((t) => t.locations.includes(loc)).sort(byRating); }
 export function getActiveLocations(): Location[] {
   const seen = new Set<Location>();
   tools.forEach((t) => t.locations.forEach((l) => seen.add(l)));

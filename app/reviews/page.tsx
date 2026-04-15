@@ -26,7 +26,7 @@ export default function ReviewsPage() {
       <div style={{ background: "var(--bg)", padding: "56px 0" }}>
         <div className="container">
           {CATEGORIES.map((cat) => {
-            const catTools = tools.filter((t) => t.category === cat);
+            const catTools = tools.filter((t) => t.category === cat).sort((a, b) => b.rating - a.rating);
             if (!catTools.length) return null;
             return (
               <section key={cat} style={{ marginBottom: "56px" }}>
