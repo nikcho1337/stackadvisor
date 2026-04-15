@@ -3,7 +3,7 @@ import Image from "next/image";
 import NetworkBackground from "@/components/NetworkBackground";
 import CircuitBackground from "@/components/CircuitBackground";
 import ServerBackground from "@/components/ServerBackground";
-import { featuredTools, tools, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS, type Category } from "@/lib/tools";
+import { featuredTools, tools, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS, LOCATION_FLAGS, LOCATION_LABELS, type Category } from "@/lib/tools";
 import { articles } from "@/lib/articles";
 
 const CATEGORIES = Object.keys(CATEGORY_LABELS) as Category[];
@@ -266,6 +266,20 @@ export default function HomePage() {
                     <p style={{ fontSize: "0.855rem", color: "var(--fg-body)", lineHeight: "1.6", flexGrow: 1 }}>
                       {tool.tagline}
                     </p>
+                    <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
+                      {tool.locations.map((loc) => (
+                        <span key={loc} style={{
+                          fontSize: "0.72rem", fontWeight: 600,
+                          color: "var(--fg-dim)",
+                          background: "var(--bg)",
+                          border: "1px solid var(--border)",
+                          borderRadius: "20px",
+                          padding: "2px 8px",
+                        }}>
+                          {LOCATION_FLAGS[loc]} {LOCATION_LABELS[loc]}
+                        </span>
+                      ))}
+                    </div>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: "12px", borderTop: "1px solid var(--border)" }}>
                       <span className="price-tag">{tool.price}</span>
                       <span style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--accent)" }}>Read →</span>

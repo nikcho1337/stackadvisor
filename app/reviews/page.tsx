@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { tools, CATEGORY_LABELS, type Category } from "@/lib/tools";
+import { tools, CATEGORY_LABELS, LOCATION_FLAGS, LOCATION_LABELS, type Category } from "@/lib/tools";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -48,7 +48,21 @@ export default function ReviewsPage() {
                             <h3 style={{ fontSize: "1.1rem" }}>{tool.name}</h3>
                             <span className={`badge badge-${tool.badgeColor}`}>{tool.badge}</span>
                           </div>
-                          <p style={{ fontSize: "0.875rem", color: "var(--fg-body)" }}>{tool.tagline}</p>
+                          <p style={{ fontSize: "0.875rem", color: "var(--fg-body)", marginBottom: "8px" }}>{tool.tagline}</p>
+                          <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
+                            {tool.locations.map((loc) => (
+                              <span key={loc} style={{
+                                fontSize: "0.72rem", fontWeight: 600,
+                                color: "var(--fg-dim)",
+                                background: "var(--bg-white)",
+                                border: "1px solid var(--border)",
+                                borderRadius: "20px",
+                                padding: "2px 8px",
+                              }}>
+                                {LOCATION_FLAGS[loc]} {LOCATION_LABELS[loc]}
+                              </span>
+                            ))}
+                          </div>
                         </div>
 
                         <div style={{ textAlign: "right" }}>
