@@ -163,7 +163,13 @@ export default function HomePage() {
       </section>
 
       {/* ── PROVIDER LOGOS STRIP ────────────────────────────────── */}
-      <section style={{ background: "var(--bg-white)", borderBottom: "1px solid var(--border)", padding: "14px 0" }}>
+      <section style={{
+        borderBottom: "1px solid var(--border)",
+        padding: "14px 0",
+        background: "#fff",
+        backgroundImage: "radial-gradient(circle, rgba(242,101,34,0.07) 1px, transparent 1px)",
+        backgroundSize: "22px 22px",
+      }}>
         <div className="container">
           <div style={{ display: "flex", alignItems: "center", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
             <span className="label" style={{ color: "var(--fg-muted)", whiteSpace: "nowrap", marginRight: "8px" }}>Tested &amp; reviewed:</span>
