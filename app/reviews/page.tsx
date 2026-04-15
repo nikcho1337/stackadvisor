@@ -38,7 +38,7 @@ export default function ReviewsPage() {
                 <div style={{ display: "grid", gap: "12px" }}>
                   {catTools.map((tool) => (
                     <Link key={tool.slug} href={`/reviews/${tool.slug}`} style={{ textDecoration: "none" }}>
-                      <div className="card" style={{ padding: "20px 24px", display: "grid", gridTemplateColumns: "80px 1fr auto", gap: "24px", alignItems: "center" }}>
+                      <div className="card review-card" style={{ padding: "20px 24px", display: "grid", gridTemplateColumns: "80px 1fr auto", gap: "24px", alignItems: "center" }}>
                         <div style={{ textAlign: "center" }}>
                           <div className="score-num" style={{ fontSize: "2rem" }}>{tool.rating.toFixed(1)}</div>
                           <div className="label">/5.0</div>
@@ -66,7 +66,7 @@ export default function ReviewsPage() {
                           </div>
                         </div>
 
-                        <div style={{ textAlign: "right" }}>
+                        <div className="review-card-cta" style={{ textAlign: "right" }}>
                           <div style={{ fontWeight: 600, fontSize: "0.9rem", color: "var(--fg)", marginBottom: "6px" }}>{tool.price}</div>
                           <div style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--accent)" }}>Read review →</div>
                         </div>

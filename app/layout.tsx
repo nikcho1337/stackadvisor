@@ -70,7 +70,7 @@ export default function RootLayout({
             <span style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.92)", fontWeight: 500 }}>
               InterServer VPS from <strong style={{ color: "#fff" }}>$3/mo</strong> — price locked forever. No renewal surprises.
             </span>
-            <a href="/reviews/interserver-vps-review" style={{
+            <a href="/reviews/interserver-vps-review" className="announce-btn" style={{
               fontSize: "0.78rem", fontWeight: 700, color: "#fff",
               background: "rgba(255,255,255,0.15)", borderRadius: "4px",
               padding: "2px 10px", textDecoration: "none", border: "1px solid rgba(255,255,255,0.3)",

@@ -202,9 +202,22 @@ function NavItemDropdown({
   );
 }
 
+const MOBILE_LINKS = [
+  { href: "/reviews",             label: "All Reviews" },
+  { href: "/categories/vps",      label: "Cloud VPS" },
+  { href: "/categories/dedicated",label: "Dedicated Servers" },
+  { href: "/categories/shared",   label: "Shared Hosting" },
+  { href: "/categories/managed",  label: "Managed Services" },
+  { href: "/locations/us",        label: "🇺🇸 United States" },
+  { href: "/locations/latam",     label: "🌎 Latin America" },
+  { href: "/blog",                label: "Hosting Guides" },
+  { href: "/about",               label: "About" },
+];
+
 // ─── Main Nav ─────────────────────────────────────────────────
 export default function Nav() {
   const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <header style={{
@@ -215,51 +228,66 @@ export default function Nav() {
       zIndex: 100,
       boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
     }}>
-      <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
+      <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px", position: "relative" }}>
 
         {/* Logo */}
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: "2px", textDecoration: "none" }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: "2px", textDecoration: "none" }} onClick={() => setMobileOpen(false)}>
           <span style={{ fontFamily: "var(--font-archivo), sans-serif", fontWeight: 900, fontSize: "1.25rem", color: "var(--fg)", letterSpacing: "-0.03em" }}>Stack</span>
           <span style={{ fontFamily: "var(--font-archivo), sans-serif", fontWeight: 900, fontSize: "1.25rem", color: "var(--accent)", letterSpacing: "-0.03em" }}>Advisor</span>
           <span style={{ fontFamily: "var(--font-jetbrains), monospace", fontSize: "0.6rem", color: "var(--fg-muted)", marginLeft: "1px", marginBottom: "8px", fontWeight: 500 }}>.io</span>
         </Link>
 
-        {/* Nav */}
-        <nav style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-
-          {/* Hosting Reviews — dropdown */}
+        {/* Desktop Nav */}
+        <nav className="nav-desktop" style={{ alignItems: "center", gap: "4px" }}>
           <NavItemDropdown label="Hosting Reviews" active={!!pathname?.startsWith("/reviews") || !!pathname?.startsWith("/categories")}>
             <ReviewsPanel />
           </NavItemDropdown>
-
-          {/* Tips — dropdown */}
           <NavItemDropdown label="Tips" active={!!pathname?.startsWith("/blog")}>
             <GuidesPanel />
           </NavItemDropdown>
-
-          {/* About — plain link */}
-          <Link
-            href="/about"
-            style={{
-              fontFamily: "var(--font-inter), sans-serif",
-              fontSize: "0.875rem",
-              fontWeight: 500,
-              padding: "6px 14px",
-              borderRadius: "6px",
-              color: pathname?.startsWith("/about") ? "var(--accent)" : "var(--fg-body)",
-              background: pathname?.startsWith("/about") ? "var(--accent-light)" : "transparent",
-              transition: "all 0.15s",
-            }}
-          >
-            About
-          </Link>
+          <Link href="/about" style={{
+            fontFamily: "var(--font-inter), sans-serif", fontSize: "0.875rem", fontWeight: 500,
+            padding: "6px 14px", borderRadius: "6px",
+            color: pathname?.startsWith("/about") ? "var(--accent)" : "var(--fg-body)",
+            background: pathname?.startsWith("/about") ? "var(--accent-light)" : "transparent",
+            transition: "all 0.15s",
+          }}>About</Link>
         </nav>
 
-        {/* CTA */}
-        <Link href="/reviews" className="btn-primary" style={{ fontSize: "0.82rem", padding: "9px 20px" }}>
+        {/* Desktop CTA */}
+        <Link href="/reviews" className="btn-primary nav-cta-btn" style={{ fontSize: "0.82rem", padding: "9px 20px" }}>
           Compare Hosts →
         </Link>
+
+        {/* Hamburger */}
+        <button className="nav-hamburger" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
+          {mobileOpen
+            ? <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            : <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          }
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="nav-mobile-menu">
+          {MOBILE_LINKS.map((l) => (
+            <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)} style={{
+              fontSize: "0.95rem", fontWeight: 500, color: "var(--fg-body)",
+              padding: "11px 24px", borderRadius: "0",
+              borderBottom: "1px solid var(--border)",
+              display: "block",
+            }}>
+              {l.label}
+            </Link>
+          ))}
+          <div style={{ padding: "14px 24px" }}>
+            <Link href="/reviews" className="btn-primary" style={{ width: "100%", justifyContent: "center" }} onClick={() => setMobileOpen(false)}>
+              Compare Hosts →
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

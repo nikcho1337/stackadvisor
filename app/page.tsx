@@ -56,7 +56,7 @@ export default function HomePage() {
         }} />
 
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 440px", gap: "64px", alignItems: "center" }}>
+          <div className="hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 440px", gap: "64px", alignItems: "center" }}>
 
             {/* Left */}
             <div>
@@ -96,7 +96,7 @@ export default function HomePage() {
 
             {/* Right — Hero feature card */}
             {heroTool && (
-              <div style={{
+              <div className="hero-side" style={{
                 background: "#fff",
                 border: "2px solid var(--accent)",
                 borderRadius: "16px",
@@ -218,7 +218,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
+          <div className="grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
             {featuredTools.slice(0, 6).map((tool) => (
               <Link key={tool.slug} href={`/reviews/${tool.slug}`} style={{ textDecoration: "none" }}>
                 <div className="card" style={{ padding: "0", height: "100%", display: "flex", flexDirection: "column", overflow: "hidden" }}>
@@ -306,7 +306,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px" }}>
+          <div className="grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px" }}>
             {latestArticles.map((article) => (
               <Link key={article.slug} href={`/blog/${article.slug}`} style={{ textDecoration: "none" }}>
                 <div className="card" style={{ height: "100%", display: "flex", flexDirection: "column", overflow: "hidden" }}>
@@ -351,7 +351,7 @@ export default function HomePage() {
             <h2 style={{ fontSize: "2rem" }}>What type of hosting do you need?</h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "14px" }}>
+          <div className="grid-5" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "14px" }}>
             {CATEGORIES.map((cat) => (
               <Link key={cat} href={`/categories/${cat}`} style={{ textDecoration: "none" }}>
                 <div className="card" style={{ padding: "28px 20px", textAlign: "center", height: "100%", display: "flex", flexDirection: "column", gap: "10px", alignItems: "center" }}>

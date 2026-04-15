@@ -5,10 +5,10 @@ export default function Footer() {
     <footer style={{ background: "var(--bg-dark)", color: "#fff", marginTop: "auto" }}>
 
       {/* Main footer */}
-      <div className="container" style={{ padding: "56px 24px 40px", display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr", gap: "40px" }}>
+      <div className="container footer-grid" style={{ padding: "56px 24px 40px", display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr", gap: "40px" }}>
 
         {/* Brand */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+        <div className="footer-brand" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "2px" }}>
             <span style={{ fontFamily: "var(--font-archivo), sans-serif", fontWeight: 900, fontSize: "1.2rem", color: "#fff", letterSpacing: "-0.03em" }}>Stack</span>
             <span style={{ fontFamily: "var(--font-archivo), sans-serif", fontWeight: 900, fontSize: "1.2rem", color: "var(--accent)", letterSpacing: "-0.03em" }}>Advisor</span>
