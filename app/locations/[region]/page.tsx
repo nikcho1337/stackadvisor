@@ -71,17 +71,16 @@ export default async function LocationPage({ params }: Props) {
                     <p style={{ fontSize: "0.875rem", color: "var(--fg-body)", marginBottom: "8px" }}>{tool.tagline}</p>
                     <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
                       {tool.locations.map((l) => (
-                        <Link key={l} href={`/locations/${l}`} style={{ textDecoration: "none" }} onClick={(e) => e.stopPropagation()}>
-                          <span style={{
-                            fontSize: "0.72rem", fontWeight: 600,
-                            background: l === loc ? "var(--accent-light)" : "var(--bg-dark-soft, #f1f5f9)",
-                            color: l === loc ? "var(--accent)" : "var(--fg-dim)",
-                            padding: "2px 8px", borderRadius: "20px",
-                            border: l === loc ? "1px solid var(--accent)" : "1px solid transparent",
-                          }}>
-                            <FlagImg loc={l} height={11} /> {LOCATION_LABELS[l]}
-                          </span>
-                        </Link>
+                        <span key={l} style={{
+                          fontSize: "0.72rem", fontWeight: 600,
+                          background: l === loc ? "var(--accent-light)" : "var(--bg-dark-soft, #f1f5f9)",
+                          color: l === loc ? "var(--accent)" : "var(--fg-dim)",
+                          padding: "2px 8px", borderRadius: "20px",
+                          border: l === loc ? "1px solid var(--accent)" : "1px solid transparent",
+                          display: "inline-flex", alignItems: "center", gap: "5px",
+                        }}>
+                          <FlagImg loc={l} height={11} /> {LOCATION_LABELS[l]}
+                        </span>
                       ))}
                     </div>
                   </div>
