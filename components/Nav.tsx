@@ -18,6 +18,14 @@ const REVIEWS_DROPDOWN = {
       ],
     },
     {
+      heading: "By Region",
+      links: [
+        { href: "/locations/us",    icon: "🇺🇸", label: "United States",   sub: "NYC · Dallas · LA · Miami" },
+        { href: "/locations/latam", icon: "🌎", label: "Latin America",   sub: "Brazil · Miami corridor" },
+        { href: "/locations",       icon: "🗺",  label: "All Regions",     sub: "Browse by data center location" },
+      ],
+    },
+    {
       heading: "Top Picks",
       links: [
         { href: "/reviews/interserver-vps-review",          icon: "★", label: "InterServer VPS",      sub: "$3/mo · Cloud VPS · 4.8★" },
@@ -49,10 +57,10 @@ function ReviewsPanel() {
       boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06)",
       padding: "8px",
       display: "grid",
-      gridTemplateColumns: "220px 240px",
+      gridTemplateColumns: "200px 180px 220px",
       gap: "4px",
       zIndex: 200,
-      minWidth: "480px",
+      minWidth: "620px",
     }}>
       {REVIEWS_DROPDOWN.columns.map((col) => (
         <div key={col.heading} style={{ padding: "12px 8px" }}>

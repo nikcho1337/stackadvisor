@@ -1,5 +1,31 @@
 export type Category = "shared" | "vps" | "dedicated" | "storage" | "managed";
 
+export type Location = "us" | "eu" | "latam" | "apac" | "ca";
+
+export const LOCATION_LABELS: Record<Location, string> = {
+  us:    "United States",
+  eu:    "Europe",
+  latam: "Latin America",
+  apac:  "Asia Pacific",
+  ca:    "Canada",
+};
+
+export const LOCATION_FLAGS: Record<Location, string> = {
+  us:    "🇺🇸",
+  eu:    "🇪🇺",
+  latam: "🌎",
+  apac:  "🌏",
+  ca:    "🇨🇦",
+};
+
+export const LOCATION_DESCRIPTIONS: Record<Location, string> = {
+  us:    "US-based data centers — optimal for North American audiences, sub-20ms east coast latency",
+  eu:    "EU-hosted providers — GDPR-ready data residency and low latency for European users",
+  latam: "Latin America data centers — low latency for Brazil and South American audiences",
+  apac:  "Asia-Pacific infrastructure — optimized for audiences in East Asia and Oceania",
+  ca:    "Canadian data centers — PIPEDA-compliant hosting with low latency for Canadian users",
+};
+
 export const CATEGORY_LABELS: Record<Category, string> = {
   shared:    "Shared Hosting",
   vps:       "Cloud VPS",
@@ -45,6 +71,7 @@ export interface Tool {
   affiliateHref: string;
   affiliateCta: string;
   featured: boolean;
+  locations: Location[];
 }
 
 const INTERSERVER_AFFILIATE = "https://www.interserver.net/r/1063142";
@@ -142,6 +169,7 @@ export const tools: Tool[] = [
     affiliateHref: INTERSERVER_AFFILIATE,
     affiliateCta: "Start InterServer VPS — $3/mo",
     featured: true,
+    locations: ["us"],
   },
 
   // ─── INTERSERVER WEB HOSTING (ASP.NET) ───────────────────────────────────
@@ -228,6 +256,7 @@ export const tools: Tool[] = [
     affiliateHref: INTERSERVER_AFFILIATE,
     affiliateCta: "Get InterServer Hosting — $8/mo",
     featured: true,
+    locations: ["us"],
   },
 
   // ─── INTERSERVER PRIVATE EMAIL ────────────────────────────────────────────
@@ -312,6 +341,7 @@ export const tools: Tool[] = [
     affiliateHref: INTERSERVER_AFFILIATE,
     affiliateCta: "Get InterServer Email — $2.50/mo",
     featured: true,
+    locations: ["us"],
   },
 
   // ─── SERVERSP DEDICATED SERVERS ──────────────────────────────────────────
@@ -406,6 +436,7 @@ export const tools: Tool[] = [
     affiliateHref: SERVERSP_AFFILIATE,
     affiliateCta: "Get ServerSP Dedicated — from $169/mo",
     featured: true,
+    locations: ["us", "latam"],
   },
 
 ];
@@ -413,6 +444,12 @@ export const tools: Tool[] = [
 export const featuredTools = tools.filter((t) => t.featured);
 export function getToolBySlug(slug: string) { return tools.find((t) => t.slug === slug); }
 export function getToolsByCategory(cat: Category) { return tools.filter((t) => t.category === cat); }
+export function getToolsByLocation(loc: Location) { return tools.filter((t) => t.locations.includes(loc)); }
+export function getActiveLocations(): Location[] {
+  const seen = new Set<Location>();
+  tools.forEach((t) => t.locations.forEach((l) => seen.add(l)));
+  return (Object.keys(LOCATION_LABELS) as Location[]).filter((l) => seen.has(l));
+}
 export function getRatingLabel(r: number) {
   if (r >= 4.7) return "Exceptional";
   if (r >= 4.4) return "Highly Recommended";

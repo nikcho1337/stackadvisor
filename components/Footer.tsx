@@ -5,7 +5,7 @@ export default function Footer() {
     <footer style={{ background: "var(--bg-dark)", color: "#fff", marginTop: "auto" }}>
 
       {/* Main footer */}
-      <div className="container" style={{ padding: "56px 24px 40px", display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: "48px" }}>
+      <div className="container" style={{ padding: "56px 24px 40px", display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr", gap: "40px" }}>
 
         {/* Brand */}
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -47,6 +47,20 @@ export default function Footer() {
             { href: "/blog/dedicated-server-vs-vps", label: "Dedicated vs VPS" },
             { href: "/blog/storage-server-vs-object-storage", label: "Storage Server Guide" },
             { href: "/blog", label: "All Guides →" },
+          ].map((l) => (
+            <Link key={l.href} href={l.href} style={{ display: "block", fontSize: "0.875rem", color: "rgba(255,255,255,0.55)", marginBottom: "10px" }}>
+              {l.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* By Region */}
+        <div>
+          <p style={{ fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(255,255,255,0.4)", marginBottom: "16px" }}>By Region</p>
+          {[
+            { href: "/locations/us",    label: "🇺🇸 United States" },
+            { href: "/locations/latam", label: "🌎 Latin America" },
+            { href: "/locations",       label: "All Regions →" },
           ].map((l) => (
             <Link key={l.href} href={l.href} style={{ display: "block", fontSize: "0.875rem", color: "rgba(255,255,255,0.55)", marginBottom: "10px" }}>
               {l.label}
