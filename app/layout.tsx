@@ -60,10 +60,13 @@ export default function RootLayout({
               letterSpacing: "0.08em", padding: "2px 8px", borderRadius: "4px",
             }}>New</span>
             <span style={{
-              display: "flex", alignItems: "center", gap: "3px",
+              display: "flex", alignItems: "center", gap: "4px",
               background: "rgba(255,255,255,0.12)", borderRadius: "4px",
-              padding: "2px 7px", fontSize: "0.82rem",
-            }}>🇺🇸 🇧🇷</span>
+              padding: "3px 8px",
+            }}>
+              <img src="https://flagcdn.com/w40/us.png" height="11" alt="US" style={{ borderRadius: "2px", display: "block" }} />
+              <img src="https://flagcdn.com/w40/br.png" height="11" alt="BR" style={{ borderRadius: "2px", display: "block" }} />
+            </span>
             <span style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.92)", fontWeight: 500 }}>
               InterServer VPS from <strong style={{ color: "#fff" }}>$3/mo</strong> — price locked forever. No renewal surprises.
             </span>

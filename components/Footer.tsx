@@ -58,8 +58,8 @@ export default function Footer() {
         <div>
           <p style={{ fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(255,255,255,0.4)", marginBottom: "16px" }}>By Region</p>
           {[
-            { href: "/locations/us",    label: "🇺🇸 United States" },
-            { href: "/locations/latam", label: "🌎 Latin America" },
+            { href: "/locations/us",    label: "United States" },
+            { href: "/locations/latam", label: "Latin America" },
             { href: "/locations",       label: "All Regions →" },
           ].map((l) => (
             <Link key={l.href} href={l.href} style={{ display: "block", fontSize: "0.875rem", color: "rgba(255,255,255,0.55)", marginBottom: "10px" }}>

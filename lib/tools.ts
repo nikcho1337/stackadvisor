@@ -10,14 +10,6 @@ export const LOCATION_LABELS: Record<Location, string> = {
   ca:    "Canada",
 };
 
-export const LOCATION_FLAGS: Record<Location, string> = {
-  us:    "🇺🇸",
-  eu:    "🇪🇺",
-  latam: "🌎",
-  apac:  "🌏",
-  ca:    "🇨🇦",
-};
-
 export const LOCATION_DESCRIPTIONS: Record<Location, string> = {
   us:    "US-based data centers — optimal for North American audiences, sub-20ms east coast latency",
   eu:    "EU-hosted providers — GDPR-ready data residency and low latency for European users",

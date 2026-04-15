@@ -20,9 +20,9 @@ const REVIEWS_DROPDOWN = {
     {
       heading: "By Region",
       links: [
-        { href: "/locations/us",    icon: "🇺🇸", label: "United States",   sub: "NYC · Dallas · LA · Miami" },
-        { href: "/locations/latam", icon: "🌎", label: "Latin America",   sub: "Brazil · Miami corridor" },
-        { href: "/locations",       icon: "🗺",  label: "All Regions",     sub: "Browse by data center location" },
+        { href: "/locations/us",    icon: "📍", label: "United States",   sub: "NYC · Dallas · LA · Miami" },
+        { href: "/locations/latam", icon: "📍", label: "Latin America",   sub: "Brazil · Miami corridor" },
+        { href: "/locations",       icon: "🌐",  label: "All Regions",     sub: "Browse by data center location" },
       ],
     },
     {

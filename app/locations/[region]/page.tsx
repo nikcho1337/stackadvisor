@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getToolsByLocation, getActiveLocations, LOCATION_LABELS, LOCATION_FLAGS, LOCATION_DESCRIPTIONS, type Location } from "@/lib/tools";
+import { getToolsByLocation, getActiveLocations, LOCATION_LABELS, LOCATION_DESCRIPTIONS, type Location } from "@/lib/tools";
+import FlagImg from "@/components/FlagImg";
 import type { Metadata } from "next";
 
 interface Props { params: Promise<{ region: string }> }
@@ -40,7 +41,7 @@ export default async function LocationPage({ params }: Props) {
             <span style={{ fontSize: "0.82rem", color: "var(--fg)" }}>{LOCATION_LABELS[loc]}</span>
           </nav>
           <div className="eyebrow" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <span>{LOCATION_FLAGS[loc]}</span>
+            <FlagImg loc={loc} height={14} />
             <span>{LOCATION_LABELS[loc]}</span>
           </div>
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", marginBottom: "12px" }}>
@@ -78,7 +79,7 @@ export default async function LocationPage({ params }: Props) {
                             padding: "2px 8px", borderRadius: "20px",
                             border: l === loc ? "1px solid var(--accent)" : "1px solid transparent",
                           }}>
-                            {LOCATION_FLAGS[l]} {LOCATION_LABELS[l]}
+                            <FlagImg loc={l} height={11} /> {LOCATION_LABELS[l]}
                           </span>
                         </Link>
                       ))}

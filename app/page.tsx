@@ -3,7 +3,8 @@ import Image from "next/image";
 import NetworkBackground from "@/components/NetworkBackground";
 import CircuitBackground from "@/components/CircuitBackground";
 import ServerBackground from "@/components/ServerBackground";
-import { featuredTools, tools, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS, LOCATION_FLAGS, LOCATION_LABELS, type Category } from "@/lib/tools";
+import { featuredTools, tools, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS, LOCATION_LABELS, type Category } from "@/lib/tools";
+import FlagImg from "@/components/FlagImg";
 import { articles } from "@/lib/articles";
 
 const CATEGORIES = Object.keys(CATEGORY_LABELS) as Category[];
@@ -276,7 +277,7 @@ export default function HomePage() {
                           borderRadius: "20px",
                           padding: "2px 8px",
                         }}>
-                          {LOCATION_FLAGS[loc]} {LOCATION_LABELS[loc]}
+                          <FlagImg loc={loc} height={11} /> {LOCATION_LABELS[loc]}
                         </span>
                       ))}
                     </div>

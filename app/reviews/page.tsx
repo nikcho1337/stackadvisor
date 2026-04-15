@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { tools, CATEGORY_LABELS, LOCATION_FLAGS, LOCATION_LABELS, type Category } from "@/lib/tools";
+import { tools, CATEGORY_LABELS, LOCATION_LABELS, type Category } from "@/lib/tools";
+import FlagImg from "@/components/FlagImg";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -59,7 +60,7 @@ export default function ReviewsPage() {
                                 borderRadius: "20px",
                                 padding: "2px 8px",
                               }}>
-                                {LOCATION_FLAGS[loc]} {LOCATION_LABELS[loc]}
+                                <FlagImg loc={loc} height={11} /> {LOCATION_LABELS[loc]}
                               </span>
                             ))}
                           </div>

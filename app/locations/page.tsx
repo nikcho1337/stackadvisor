@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { getActiveLocations, getToolsByLocation, LOCATION_LABELS, LOCATION_FLAGS, LOCATION_DESCRIPTIONS } from "@/lib/tools";
+import { getActiveLocations, getToolsByLocation, LOCATION_LABELS, LOCATION_DESCRIPTIONS } from "@/lib/tools";
+import FlagImg from "@/components/FlagImg";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -38,7 +39,7 @@ export default function LocationsPage() {
                 <Link key={loc} href={`/locations/${loc}`} style={{ textDecoration: "none" }}>
                   <div className="card" style={{ padding: "28px", height: "100%", display: "flex", flexDirection: "column", gap: "12px" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                      <span style={{ fontSize: "2rem" }}>{LOCATION_FLAGS[loc]}</span>
+                      <FlagImg loc={loc} height={28} />
                       <div>
                         <div style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--fg)" }}>{LOCATION_LABELS[loc]}</div>
                         <div className="label">{locTools.length} provider{locTools.length !== 1 ? "s" : ""}</div>
