@@ -114,8 +114,8 @@ export default function ServerBackground() {
       const H = canvas.height;
       ctx.clearRect(0, 0, W, H);
 
-      // ── Background ──
-      ctx.fillStyle = "#030805";
+      // ── Background (matches var(--bg-dark) #0F172A) ──
+      ctx.fillStyle = "#0F172A";
       ctx.fillRect(0, 0, W, H);
 
       // ── Scanlines ──
@@ -226,16 +226,16 @@ export default function ServerBackground() {
         ctx.globalAlpha = 1;
       }
 
-      // ── Vignette (wide enough to cover edge racks) ──
+      // ── Vignette (matches section bg-dark #0F172A) ──
       const vW = RACK_WIDTH + RACK_GAP + 10;
       const vL = ctx.createLinearGradient(0, 0, vW, 0);
-      vL.addColorStop(0, "rgba(3,8,5,1)");
+      vL.addColorStop(0, "rgba(15,23,42,1)");
       vL.addColorStop(1, "transparent");
       ctx.fillStyle = vL; ctx.fillRect(0, 0, vW, H);
 
       const vR = ctx.createLinearGradient(W - vW, 0, W, 0);
       vR.addColorStop(0, "transparent");
-      vR.addColorStop(1, "rgba(3,8,5,1)");
+      vR.addColorStop(1, "rgba(15,23,42,1)");
       ctx.fillStyle = vR; ctx.fillRect(W - vW, 0, vW, H);
 
       const vT = ctx.createLinearGradient(0, 0, 0, 40);
