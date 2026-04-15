@@ -23,7 +23,7 @@ export default async function ReviewPage({ params }: Props) {
   const tool = getToolBySlug(slug);
   if (!tool) notFound();
 
-  const ratingColor = tool.rating >= 4.7 ? "var(--green)" : tool.rating >= 4.4 ? "var(--accent)" : "var(--grey)";
+  const ratingColor = tool.rating >= 4.7 ? "var(--green)" : tool.rating >= 4.6 ? "var(--accent)" : "var(--grey)";
 
   return (
     <>
