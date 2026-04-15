@@ -66,8 +66,8 @@ export const tools: Tool[] = [
     price: "$3/mo",
     heroImage: INTERSERVER_LOGO,
     heroImageAlt: "InterServer VPS hosting",
-    logoBg: "#EFF6FF",
-    logoFg: "#1D4ED8",
+    logoBg: "#F0FDF4",
+    logoFg: "#16A34A",
     metaTitle: "InterServer VPS Review 2026 — $3/mo Cloud VPS Worth It?",
     metaDescription:
       "InterServer's VPS Special delivers 2GB RAM and 30GB SSD from $3/mo with instant activation and no price hikes. We tested performance and support across 5 months.",
@@ -155,8 +155,8 @@ export const tools: Tool[] = [
     price: "$8/mo",
     heroImage: INTERSERVER_LOGO,
     heroImageAlt: "InterServer web hosting",
-    logoBg: "#F0FDF4",
-    logoFg: "#16A34A",
+    logoBg: "#FEF3EC",
+    logoFg: "#F26522",
     metaTitle: "InterServer Web Hosting Review 2026 — Is the $8/mo Plan Worth It?",
     metaDescription:
       "InterServer's all-in-one web hosting plan includes ASP.NET support, unlimited storage, free migration, and a price that never increases on renewal. We tested it for 5 months.",
@@ -241,8 +241,8 @@ export const tools: Tool[] = [
     price: "$2.50/mo",
     heroImage: INTERSERVER_LOGO,
     heroImageAlt: "InterServer private email hosting",
-    logoBg: "#F3F4F6",
-    logoFg: "#374151",
+    logoBg: "#F9FAFB",
+    logoFg: "#6B7280",
     metaTitle: "InterServer Email Hosting Review 2026 — Private Email at $2.50/mo?",
     metaDescription:
       "InterServer's private email hosting gives you 25GB mailboxes, Outlook/webmail access, 100% uptime, and email archiving at $2.50/mo with no price increases.",
