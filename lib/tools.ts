@@ -50,7 +50,7 @@ export interface Tool {
 const INTERSERVER_AFFILIATE = "https://www.interserver.net/r/1063142";
 const INTERSERVER_LOGO = "https://s3-eu-west-1.amazonaws.com/tpd/logos/5a13ed300000ff0005b11098/0x0.png";
 
-const SERVERSP_AFFILIATE = "https://serversp.com/cheap-dedicated-server-xeon/";
+const SERVERSP_AFFILIATE = "https://manager.serversp.com/aff.php?aff=17";
 const SERVERSP_LOGO = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoT_L8ltcRmC41XapowGy7xWurWkfd7l5oYg&s";
 
 export const tools: Tool[] = [
