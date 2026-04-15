@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { tools, getToolBySlug, getRatingLabel, CATEGORY_LABELS } from "@/lib/tools";
+import { tools, getToolBySlug, getRatingLabel, CATEGORY_LABELS, LOCATION_LABELS } from "@/lib/tools";
+import FlagImg from "@/components/FlagImg";
 import NetworkBackground from "@/components/NetworkBackground";
 import type { Metadata } from "next";
 
@@ -165,7 +166,7 @@ export default async function ReviewPage({ params }: Props) {
 
               {/* Meta rows */}
               {[
-                { label: "Price", value: tool.price },
+                { label: "Price",    value: tool.price },
                 { label: "Category", value: CATEGORY_LABELS[tool.category] },
               ].map((row) => (
                 <div key={row.label} style={{
@@ -176,6 +177,21 @@ export default async function ReviewPage({ params }: Props) {
                   <span style={{ fontSize: "0.875rem", fontWeight: 700, color: "#fff" }}>{row.value}</span>
                 </div>
               ))}
+
+              {/* Location row */}
+              <div style={{
+                display: "flex", justifyContent: "space-between", alignItems: "center",
+                padding: "10px 0", borderTop: "1px solid rgba(255,255,255,0.07)",
+              }}>
+                <span style={{ fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(255,255,255,0.35)" }}>Location</span>
+                <div style={{ display: "flex", gap: "6px", flexWrap: "wrap", justifyContent: "flex-end" }}>
+                  {tool.locations.map((loc) => (
+                    <span key={loc} style={{ display: "inline-flex", alignItems: "center", gap: "4px", fontSize: "0.8rem", fontWeight: 700, color: "#fff" }}>
+                      <FlagImg loc={loc} height={13} /> {LOCATION_LABELS[loc]}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
               {/* CTA */}
               <a
