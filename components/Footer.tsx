@@ -75,9 +75,6 @@ export default function Footer() {
           <span style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.3)" }}>
             © 2026 StackAdvisor.io — All rights reserved.
           </span>
-          <span style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.3)" }}>
-            Independent reviews. Real benchmarks. No fluff.
-          </span>
         </div>
       </div>
     </footer>
