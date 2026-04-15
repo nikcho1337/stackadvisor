@@ -277,7 +277,7 @@ export default function HomePage() {
                           borderRadius: "20px",
                           padding: "2px 8px",
                         }}>
-                          <FlagImg loc={loc} height={11} /> {LOCATION_LABELS[loc]}
+                          <FlagImg loc={loc} height={16} /> {LOCATION_LABELS[loc]}
                         </span>
                       ))}
                     </div>

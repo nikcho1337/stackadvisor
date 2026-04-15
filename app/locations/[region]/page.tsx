@@ -79,7 +79,7 @@ export default async function LocationPage({ params }: Props) {
                           border: l === loc ? "1px solid var(--accent)" : "1px solid transparent",
                           display: "inline-flex", alignItems: "center", gap: "5px",
                         }}>
-                          <FlagImg loc={l} height={11} /> {LOCATION_LABELS[l]}
+                          <FlagImg loc={l} height={16} /> {LOCATION_LABELS[l]}
                         </span>
                       ))}
                     </div>
