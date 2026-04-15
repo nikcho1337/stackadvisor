@@ -328,8 +328,8 @@ export const tools: Tool[] = [
     price: "$169/mo",
     heroImage: SERVERSP_LOGO,
     heroImageAlt: "ServerSP dedicated servers",
-    logoBg: "#FEF3EC",
-    logoFg: "#F26522",
+    logoBg: "#ffffff",
+    logoFg: "#2563EB",
     metaTitle: "ServerSP Dedicated Server Review 2026 — Xeon E5 from $169/mo",
     metaDescription:
       "ServerSP delivers bare-metal Xeon E5 servers from $169/mo with HW RAID, 2×10Gbps SFP+, 1Gbps unmetered bandwidth, and locations in Miami and Brazil. We benchmark performance and support.",
