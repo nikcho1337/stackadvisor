@@ -443,7 +443,7 @@ export const tools: Tool[] = [
       badge: "Best Value",
       title: "Dell R630 / 730XD",
       description: "Affordable servers delivering solid performance and reliability, ideal for small/medium businesses.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80",
+      image: "https://serversp.com/wp-content/uploads/2025/06/R630.webp",
       imageAlt: "Dell PowerEdge R630 server",
       featuresHeading: "Fully-Customized Hardware",
       features: [
