@@ -29,6 +29,7 @@ export default function Footer() {
             { href: "/reviews/interserver-vps-review", label: "InterServer VPS — $3/mo" },
             { href: "/reviews/interserver-web-hosting-review", label: "InterServer Web Hosting" },
             { href: "/reviews/interserver-email-hosting-review", label: "InterServer Email" },
+            { href: "/reviews/serversp-dedicated-review", label: "ServerSP Dedicated — $169/mo" },
             { href: "/reviews", label: "All Reviews →" },
           ].map((l) => (
             <Link key={l.href} href={l.href} style={{ display: "block", fontSize: "0.875rem", color: "rgba(255,255,255,0.55)", marginBottom: "10px", transition: "color 0.15s" }}>
