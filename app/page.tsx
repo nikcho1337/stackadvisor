@@ -8,12 +8,27 @@ import { articles } from "@/lib/articles";
 
 const CATEGORIES = Object.keys(CATEGORY_LABELS) as Category[];
 
-const CATEGORY_ICONS: Record<Category, string> = {
-  shared:    "🌐",
-  vps:       "⚡",
-  dedicated: "🖥",
-  storage:   "💾",
-  managed:   "🛡",
+const CATEGORY_ICONS: Record<Category, { svg: React.ReactNode; color: string; bg: string }> = {
+  shared: {
+    color: "#2563EB", bg: "#EFF6FF",
+    svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>,
+  },
+  vps: {
+    color: "#EA580C", bg: "#FFF7ED",
+    svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>,
+  },
+  dedicated: {
+    color: "#0F172A", bg: "#F1F5F9",
+    svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>,
+  },
+  storage: {
+    color: "#7C3AED", bg: "#F5F3FF",
+    svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>,
+  },
+  managed: {
+    color: "#16A34A", bg: "#F0FDF4",
+    svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>,
+  },
 };
 
 export default function HomePage() {
@@ -322,7 +337,14 @@ export default function HomePage() {
             {CATEGORIES.map((cat) => (
               <Link key={cat} href={`/categories/${cat}`} style={{ textDecoration: "none" }}>
                 <div className="card" style={{ padding: "28px 20px", textAlign: "center", height: "100%", display: "flex", flexDirection: "column", gap: "10px", alignItems: "center" }}>
-                  <span style={{ fontSize: "2rem" }}>{CATEGORY_ICONS[cat]}</span>
+                  <div style={{
+                    width: "52px", height: "52px", borderRadius: "14px",
+                    background: CATEGORY_ICONS[cat].bg,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: CATEGORY_ICONS[cat].color,
+                  }}>
+                    {CATEGORY_ICONS[cat].svg}
+                  </div>
                   <div style={{ fontFamily: "var(--font-archivo), sans-serif", fontWeight: 900, fontSize: "0.95rem", color: "var(--fg)", letterSpacing: "-0.01em" }}>
                     {CATEGORY_LABELS[cat]}
                   </div>
