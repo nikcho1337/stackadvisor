@@ -64,8 +64,8 @@ export default function RootLayout({
               background: "rgba(255,255,255,0.12)", borderRadius: "4px",
               padding: "3px 8px",
             }}>
-              <img src="https://cdn-icons-png.flaticon.com/512/555/555526.png" height="13" width="13" alt="US" style={{ display: "block" }} />
-              <img src="https://cdn-icons-png.flaticon.com/512/7501/7501795.png" height="13" width="13" alt="BR" style={{ display: "block" }} />
+              <img src="/flags/us.png" height="13" width="13" alt="US" style={{ display: "block" }} />
+              <img src="/flags/br.png" height="13" width="13" alt="BR" style={{ display: "block" }} />
             </span>
             <span style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.92)", fontWeight: 500 }}>
               InterServer VPS from <strong style={{ color: "#fff" }}>$3/mo</strong> — price locked forever. No renewal surprises.

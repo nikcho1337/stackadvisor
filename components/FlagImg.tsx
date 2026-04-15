@@ -1,13 +1,13 @@
-const FLAG_URLS: Record<string, string> = {
-  us:    "https://cdn-icons-png.flaticon.com/512/555/555526.png",
-  eu:    "https://flagcdn.com/w40/eu.png",
-  latam: "https://cdn-icons-png.flaticon.com/512/7501/7501795.png",
-  apac:  "https://flagcdn.com/w40/sg.png",
-  ca:    "https://flagcdn.com/w40/ca.png",
+const FLAG_SRCS: Record<string, string> = {
+  us:    "/flags/us.png",
+  latam: "/flags/br.png",
+  eu:    "/flags/eu.png",
+  apac:  "/flags/apac.png",
+  ca:    "/flags/ca.png",
 };
 
 export default function FlagImg({ loc, height = 13 }: { loc: string; height?: number }) {
-  const src = FLAG_URLS[loc] ?? `https://flagcdn.com/w40/${loc}.png`;
+  const src = FLAG_SRCS[loc] ?? "/flags/us.png";
   return (
     <img
       src={src}
