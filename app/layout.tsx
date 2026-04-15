@@ -47,6 +47,31 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${archivo.variable} ${inter.variable} ${jetbrains.variable}`}>
       <body>
+        {/* ── Announcement bar ── */}
+        <div style={{
+          background: "linear-gradient(90deg, #1D4ED8 0%, #2563EB 50%, #1D4ED8 100%)",
+          padding: "8px 0",
+          textAlign: "center",
+        }}>
+          <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}>
+            <span style={{
+              background: "rgba(255,255,255,0.18)", color: "#fff",
+              fontSize: "0.62rem", fontWeight: 700, textTransform: "uppercase",
+              letterSpacing: "0.08em", padding: "2px 8px", borderRadius: "4px",
+            }}>New</span>
+            <span style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.92)", fontWeight: 500 }}>
+              InterServer VPS from <strong style={{ color: "#fff" }}>$3/mo</strong> — price locked forever. No renewal surprises.
+            </span>
+            <a href="/reviews/interserver-vps-review" style={{
+              fontSize: "0.78rem", fontWeight: 700, color: "#fff",
+              background: "rgba(255,255,255,0.15)", borderRadius: "4px",
+              padding: "2px 10px", textDecoration: "none", border: "1px solid rgba(255,255,255,0.3)",
+              whiteSpace: "nowrap",
+            }}>
+              Read review →
+            </a>
+          </div>
+        </div>
         <Nav />
         <main style={{ flex: 1 }}>{children}</main>
         <Footer />
