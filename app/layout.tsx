@@ -59,6 +59,11 @@ export default function RootLayout({
               fontSize: "0.62rem", fontWeight: 700, textTransform: "uppercase",
               letterSpacing: "0.08em", padding: "2px 8px", borderRadius: "4px",
             }}>New</span>
+            <span style={{
+              display: "flex", alignItems: "center", gap: "3px",
+              background: "rgba(255,255,255,0.12)", borderRadius: "4px",
+              padding: "2px 7px", fontSize: "0.82rem",
+            }}>🇺🇸 🇧🇷</span>
             <span style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.92)", fontWeight: 500 }}>
               InterServer VPS from <strong style={{ color: "#fff" }}>$3/mo</strong> — price locked forever. No renewal surprises.
             </span>
