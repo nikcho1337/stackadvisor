@@ -265,7 +265,7 @@ export const tools: Tool[] = [
     price: "$2.50/mo",
     heroImage: INTERSERVER_LOGO,
     heroImageAlt: "InterServer private email hosting",
-    logoBg: "#F9FAFB",
+    logoBg: "#ffffff",
     logoFg: "#6B7280",
     metaTitle: "InterServer Email Hosting Review 2026 — Private Email at $2.50/mo?",
     metaDescription:
