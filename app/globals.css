@@ -276,6 +276,7 @@ a:hover { color: var(--accent); }
   .nav-mobile-menu { display: flex !important; }
 
   .hero-grid  { grid-template-columns: 1fr !important; }
+  .grid-2     { grid-template-columns: 1fr !important; }
   .hero-side  { display: none !important; }
   .grid-3     { grid-template-columns: 1fr !important; }
   .grid-5     { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
