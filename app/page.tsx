@@ -74,9 +74,6 @@ export default function HomePage() {
                 <Link href="/reviews" className="btn-primary">
                   Compare Providers →
                 </Link>
-                <Link href="/blog" className="btn-outline">
-                  Read Hosting Guides
-                </Link>
               </div>
 
               {/* Trust bar */}
