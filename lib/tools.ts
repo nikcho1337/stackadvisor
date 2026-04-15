@@ -88,7 +88,7 @@ export const tools: Tool[] = [
     price: "$3/mo",
     heroImage: INTERSERVER_LOGO,
     heroImageAlt: "InterServer VPS hosting",
-    logoBg: "#F0FDF4",
+    logoBg: "#ffffff",
     logoFg: "#16A34A",
     metaTitle: "InterServer VPS Review 2026 — $3/mo Cloud VPS Worth It?",
     metaDescription:
@@ -178,7 +178,7 @@ export const tools: Tool[] = [
     price: "$8/mo",
     heroImage: INTERSERVER_LOGO,
     heroImageAlt: "InterServer web hosting",
-    logoBg: "#FEF3EC",
+    logoBg: "#ffffff",
     logoFg: "#F26522",
     metaTitle: "InterServer Web Hosting Review 2026 — Is the $8/mo Plan Worth It?",
     metaDescription:
