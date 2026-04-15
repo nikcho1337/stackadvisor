@@ -345,8 +345,8 @@ export default function HomePage() {
                   <p style={{ fontSize: "0.8rem", color: "var(--fg-dim)", lineHeight: "1.6", marginBottom: "14px" }}>
                     High-capacity AMD servers ideal for virtualization and demanding workloads.
                   </p>
-                  <div style={{ borderRadius: "6px", overflow: "hidden", height: "100px", marginBottom: "14px" }}>
-                    <img src="https://serversp.com/wp-content/uploads/2025/06/R630.webp" alt="Dell R6525" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100px", marginBottom: "14px" }}>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Dell_Logo.png/320px-Dell_Logo.png" alt="Dell" style={{ height: "60px", objectFit: "contain" }} />
                   </div>
                   <div style={{ fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#2563EB", marginBottom: "8px" }}>Fully-Customized Hardware</div>
                   {["Up to: 2x AMD EPYC Zen 1, 2 & 3Gen.", "4TB DDR4 ECC", "24x SSD NVMe / SAS / SATA", "HW RAID 0, 1, 5, 6, 10, 50, 60", "iDRAC 9 Enterprise", "Redundant Power Supply"].map((f, i) => (
