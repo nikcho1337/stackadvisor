@@ -294,133 +294,159 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURED HARDWARE ───────────────────────────────────── */}
-      <section className="section" style={{ background: "var(--bg-white)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+      <section className="section" style={{ background: "linear-gradient(180deg, #F0F4F8 0%, #E8EDF3 100%)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
         <div className="container">
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "36px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "32px" }}>
             <div>
               <div className="eyebrow">Server Configurations</div>
               <h2 style={{ fontSize: "2rem" }}>Top Server Picks</h2>
             </div>
+            <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: "5px", fontSize: "0.72rem", fontWeight: 600, color: "#16A34A", background: "#F0FDF4", border: "1px solid #BBF7D0", borderRadius: "20px", padding: "3px 10px" }}>
+                <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#16A34A", flexShrink: 0, display: "inline-block" }} />ServerSP
+              </span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: "5px", fontSize: "0.72rem", fontWeight: 600, color: "var(--accent)", background: "var(--accent-light)", border: "1px solid #FDBA74", borderRadius: "20px", padding: "3px 10px" }}>
+                <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "var(--accent)", flexShrink: 0, display: "inline-block" }} />InterServer
+              </span>
+            </div>
           </div>
 
-          <div className="grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+          <div className="grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "16px" }}>
 
             {/* ── ServerSP: Xeon E5 ── */}
             <a href="https://manager.serversp.com/aff.php?aff=17" target="_blank" rel="noopener noreferrer sponsored" style={{ textDecoration: "none" }}>
-              <div className="card" style={{ height: "100%", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                <div style={{ padding: "20px 20px 0", flexGrow: 1 }}>
-                  <h3 style={{ fontSize: "1.15rem", color: "#2563EB", textAlign: "center", marginBottom: "4px" }}>Dell Xeon E5 Series</h3>
-                  <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
-                    <span style={{ fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#2563EB", background: "#EFF6FF", padding: "2px 10px", borderRadius: "20px" }}>Intel Xeon E5</span>
-                  </div>
-                  <div style={{ textAlign: "center", marginBottom: "16px" }}>
-                    <div style={{ fontSize: "2rem", fontWeight: 900, color: "#2563EB", fontFamily: "var(--font-archivo), sans-serif", letterSpacing: "-0.03em" }}>$169</div>
-                    <div style={{ fontSize: "0.7rem", color: "var(--fg-muted)" }}>Starting price / mo</div>
-                  </div>
-                  {["2x Intel Xeon E5", "512GB DDR4 ECC", "10x SSD SATA / 4x SSD NVMe", "HW RAID + BBU", "iDRAC 8 Enterprise", "Redundant Power Supply"].map((f, i) => (
-                    <div key={i} style={{ fontSize: "0.82rem", color: "var(--fg-body)", padding: "7px 0", borderTop: "1px solid var(--border)", textAlign: "center" }}>{f}</div>
+              <div style={{
+                background: "#fff", border: "1px solid #BBF7D0", borderTop: "4px solid #16A34A",
+                borderRadius: "var(--radius)", overflow: "hidden", display: "flex", flexDirection: "column",
+                height: "100%", transition: "box-shadow 0.2s, transform 0.15s",
+                boxShadow: "0 2px 8px rgba(22,163,74,0.08)",
+              }} className="hw-card">
+                {/* Header */}
+                <div style={{ padding: "14px 16px 12px", background: "linear-gradient(135deg, #F0FDF4 0%, #fff 70%)" }}>
+                  <div style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#16A34A", marginBottom: "5px" }}>ServerSP · Miami + Brazil</div>
+                  <h3 style={{ fontSize: "0.95rem", fontWeight: 900, color: "var(--fg)", lineHeight: 1.25, marginBottom: "6px" }}>Dell Xeon E5 Series</h3>
+                  <span style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#15803D", background: "#DCFCE7", padding: "2px 8px", borderRadius: "20px" }}>Intel Xeon E5</span>
+                </div>
+                {/* Price */}
+                <div style={{ padding: "10px 16px", borderTop: "1px solid #DCFCE7", borderBottom: "1px solid var(--border)", display: "flex", alignItems: "baseline", gap: "3px" }}>
+                  <span style={{ fontSize: "1.5rem", fontWeight: 900, color: "#16A34A", fontFamily: "var(--font-archivo), sans-serif", letterSpacing: "-0.03em" }}>$169</span>
+                  <span style={{ fontSize: "0.7rem", color: "var(--fg-muted)" }}>/mo</span>
+                </div>
+                {/* Specs */}
+                <div style={{ padding: "4px 0", flexGrow: 1 }}>
+                  {["2x Intel Xeon E5", "512GB DDR4 ECC", "10x SSD SATA / 4x NVMe", "HW RAID + BBU", "iDRAC 8 Enterprise", "Redundant PSU"].map((f, i) => (
+                    <div key={i} style={{ fontSize: "0.78rem", color: "var(--fg-body)", padding: "6px 16px", borderBottom: "1px solid var(--border)", display: "flex", alignItems: "center", gap: "7px" }}>
+                      <span style={{ color: "#16A34A", fontSize: "0.6rem", flexShrink: 0 }}>▸</span>{f}
+                    </div>
                   ))}
                 </div>
-                <div style={{ padding: "16px 20px 20px" }}>
-                  <div style={{ textAlign: "center", marginBottom: "12px" }}>
-                    <span style={{ fontSize: "0.78rem", color: "var(--fg-dim)" }}>Starting at: </span>
-                    <span style={{ fontSize: "1.5rem", fontWeight: 900, color: "#2563EB", fontFamily: "var(--font-archivo), sans-serif" }}>$169</span>
-                    <span style={{ fontSize: "0.78rem", color: "var(--fg-dim)" }}>/mo</span>
+                {/* CTA */}
+                <div style={{ padding: "12px 14px" }}>
+                  <div style={{ background: "#16A34A", color: "#fff", textAlign: "center", padding: "9px 12px", borderRadius: "var(--radius)", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.03em" }}>
+                    Get This Server →
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "11px", background: "#2563EB", color: "#fff", borderRadius: "var(--radius)", fontWeight: 700, fontSize: "0.875rem", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-                    Get This Server
-                  </div>
-                  <div style={{ fontSize: "0.68rem", color: "var(--fg-muted)", textAlign: "center", marginTop: "6px" }}>ServerSP · Miami + Brazil</div>
                 </div>
               </div>
             </a>
 
             {/* ── ServerSP: AMD EPYC ── */}
             <a href="https://manager.serversp.com/aff.php?aff=17" target="_blank" rel="noopener noreferrer sponsored" style={{ textDecoration: "none" }}>
-              <div className="card" style={{ height: "100%", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                <div style={{ padding: "20px 20px 0", flexGrow: 1 }}>
-                  <h3 style={{ fontSize: "1.15rem", color: "#2563EB", textAlign: "center", marginBottom: "4px" }}>Dell R6525 / R7425</h3>
-                  <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
-                    <span style={{ fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#2563EB", background: "#EFF6FF", padding: "2px 10px", borderRadius: "20px" }}>AMD EPYC</span>
-                  </div>
-                  <div style={{ textAlign: "center", marginBottom: "16px" }}>
-                    <div style={{ fontSize: "2rem", fontWeight: 900, color: "#2563EB", fontFamily: "var(--font-archivo), sans-serif", letterSpacing: "-0.03em" }}>$629</div>
-                    <div style={{ fontSize: "0.7rem", color: "var(--fg-muted)" }}>Starting price / mo</div>
-                  </div>
-                  {["2x AMD EPYC Zen 1, 2 & 3Gen.", "4TB DDR4 ECC", "24x SSD NVMe / SAS / SATA", "HW RAID + BBU", "iDRAC 9 Enterprise", "Redundant Power Supply"].map((f, i) => (
-                    <div key={i} style={{ fontSize: "0.82rem", color: "var(--fg-body)", padding: "7px 0", borderTop: "1px solid var(--border)", textAlign: "center" }}>{f}</div>
+              <div style={{
+                background: "#fff", border: "1px solid #BBF7D0", borderTop: "4px solid #16A34A",
+                borderRadius: "var(--radius)", overflow: "hidden", display: "flex", flexDirection: "column",
+                height: "100%", transition: "box-shadow 0.2s, transform 0.15s",
+                boxShadow: "0 2px 8px rgba(22,163,74,0.08)",
+              }} className="hw-card">
+                <div style={{ padding: "14px 16px 12px", background: "linear-gradient(135deg, #F0FDF4 0%, #fff 70%)" }}>
+                  <div style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#16A34A", marginBottom: "5px" }}>ServerSP · Miami + Brazil</div>
+                  <h3 style={{ fontSize: "0.95rem", fontWeight: 900, color: "var(--fg)", lineHeight: 1.25, marginBottom: "6px" }}>Dell R6525 / R7425</h3>
+                  <span style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#15803D", background: "#DCFCE7", padding: "2px 8px", borderRadius: "20px" }}>AMD EPYC</span>
+                </div>
+                <div style={{ padding: "10px 16px", borderTop: "1px solid #DCFCE7", borderBottom: "1px solid var(--border)", display: "flex", alignItems: "baseline", gap: "3px" }}>
+                  <span style={{ fontSize: "1.5rem", fontWeight: 900, color: "#16A34A", fontFamily: "var(--font-archivo), sans-serif", letterSpacing: "-0.03em" }}>$629</span>
+                  <span style={{ fontSize: "0.7rem", color: "var(--fg-muted)" }}>/mo</span>
+                </div>
+                <div style={{ padding: "4px 0", flexGrow: 1 }}>
+                  {["2x AMD EPYC Zen 1–3 Gen.", "4TB DDR4 ECC", "24x NVMe / SAS / SATA", "HW RAID + BBU", "iDRAC 9 Enterprise", "Redundant PSU"].map((f, i) => (
+                    <div key={i} style={{ fontSize: "0.78rem", color: "var(--fg-body)", padding: "6px 16px", borderBottom: "1px solid var(--border)", display: "flex", alignItems: "center", gap: "7px" }}>
+                      <span style={{ color: "#16A34A", fontSize: "0.6rem", flexShrink: 0 }}>▸</span>{f}
+                    </div>
                   ))}
                 </div>
-                <div style={{ padding: "16px 20px 20px" }}>
-                  <div style={{ textAlign: "center", marginBottom: "12px" }}>
-                    <span style={{ fontSize: "0.78rem", color: "var(--fg-dim)" }}>Starting at: </span>
-                    <span style={{ fontSize: "1.5rem", fontWeight: 900, color: "#2563EB", fontFamily: "var(--font-archivo), sans-serif" }}>$629</span>
-                    <span style={{ fontSize: "0.78rem", color: "var(--fg-dim)" }}>/mo</span>
+                <div style={{ padding: "12px 14px" }}>
+                  <div style={{ background: "#16A34A", color: "#fff", textAlign: "center", padding: "9px 12px", borderRadius: "var(--radius)", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.03em" }}>
+                    Get This Server →
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "11px", background: "#2563EB", color: "#fff", borderRadius: "var(--radius)", fontWeight: 700, fontSize: "0.875rem", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-                    Get This Server
-                  </div>
-                  <div style={{ fontSize: "0.68rem", color: "var(--fg-muted)", textAlign: "center", marginTop: "6px" }}>ServerSP · Miami + Brazil</div>
                 </div>
               </div>
             </a>
 
             {/* ── InterServer: AMD EPYC 7402P ── */}
             <a href="https://www.interserver.net/r/1063142" target="_blank" rel="noopener noreferrer sponsored" style={{ textDecoration: "none" }}>
-              <div className="card" style={{ height: "100%", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                <div style={{ padding: "20px 20px 0", flexGrow: 1 }}>
-                  <h3 style={{ fontSize: "1.15rem", color: "#2563EB", textAlign: "center", marginBottom: "4px" }}>AMD EPYC 7402P</h3>
-                  <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
-                    <span style={{ fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#2563EB", background: "#EFF6FF", padding: "2px 10px", borderRadius: "20px" }}>AMD EPYC</span>
-                  </div>
-                  <div style={{ textAlign: "center", marginBottom: "16px" }}>
-                    <div style={{ fontSize: "2rem", fontWeight: 900, color: "#2563EB", fontFamily: "var(--font-archivo), sans-serif", letterSpacing: "-0.03em" }}>111,233</div>
-                    <div style={{ fontSize: "0.7rem", color: "var(--fg-muted)" }}>PassMark Score</div>
-                  </div>
-                  {["24 Cores on a single CPU", "128 GB Memory", "(8)SSD or (2)NVMe", "1 Gbps Unmetered Bandwidth", "IPMI Console Access", "DDoS Protection"].map((f, i) => (
-                    <div key={i} style={{ fontSize: "0.82rem", color: "var(--fg-body)", padding: "7px 0", borderTop: "1px solid var(--border)", textAlign: "center" }}>{f}</div>
+              <div style={{
+                background: "#fff", border: "1px solid #FED7AA", borderTop: "4px solid var(--accent)",
+                borderRadius: "var(--radius)", overflow: "hidden", display: "flex", flexDirection: "column",
+                height: "100%", transition: "box-shadow 0.2s, transform 0.15s",
+                boxShadow: "0 2px 8px rgba(242,101,34,0.08)",
+              }} className="hw-card">
+                <div style={{ padding: "14px 16px 12px", background: "linear-gradient(135deg, var(--accent-light) 0%, #fff 70%)" }}>
+                  <div style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent)", marginBottom: "5px" }}>InterServer · New York</div>
+                  <h3 style={{ fontSize: "0.95rem", fontWeight: 900, color: "var(--fg)", lineHeight: 1.25, marginBottom: "6px" }}>AMD EPYC 7402P</h3>
+                  <span style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--accent-dark)", background: "var(--accent-light)", padding: "2px 8px", borderRadius: "20px" }}>AMD EPYC</span>
+                </div>
+                <div style={{ padding: "10px 16px", borderTop: "1px solid #FED7AA", borderBottom: "1px solid var(--border)" }}>
+                  <div style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--fg-dim)", marginBottom: "1px" }}>PassMark Score</div>
+                  <div style={{ fontSize: "1.5rem", fontWeight: 900, color: "var(--accent)", fontFamily: "var(--font-archivo), sans-serif", letterSpacing: "-0.03em", lineHeight: 1 }}>111,233</div>
+                </div>
+                <div style={{ padding: "4px 0", flexGrow: 1 }}>
+                  {["24 Cores / single CPU", "128 GB Memory", "(8) SSD or (2) NVMe", "1 Gbps Unmetered BW", "IPMI Console Access", "DDoS Protection"].map((f, i) => (
+                    <div key={i} style={{ fontSize: "0.78rem", color: "var(--fg-body)", padding: "6px 16px", borderBottom: "1px solid var(--border)", display: "flex", alignItems: "center", gap: "7px" }}>
+                      <span style={{ color: "var(--accent)", fontSize: "0.6rem", flexShrink: 0 }}>▸</span>{f}
+                    </div>
                   ))}
                 </div>
-                <div style={{ padding: "16px 20px 20px" }}>
-                  <div style={{ textAlign: "center", marginBottom: "12px" }}>
-                    <span style={{ fontSize: "0.78rem", color: "var(--fg-dim)" }}>Starting at: </span>
-                    <span style={{ fontSize: "1.5rem", fontWeight: 900, color: "#2563EB", fontFamily: "var(--font-archivo), sans-serif" }}>$179</span>
-                    <span style={{ fontSize: "0.78rem", color: "var(--fg-dim)" }}>/mo</span>
+                <div style={{ padding: "12px 14px" }}>
+                  <div style={{ fontSize: "0.7rem", color: "var(--fg-dim)", textAlign: "center", marginBottom: "6px" }}>
+                    Starting at <strong style={{ color: "var(--fg)" }}>$179/mo</strong>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "11px", background: "#2563EB", color: "#fff", borderRadius: "var(--radius)", fontWeight: 700, fontSize: "0.875rem", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-                    Build This Server
+                  <div style={{ background: "var(--accent)", color: "#fff", textAlign: "center", padding: "9px 12px", borderRadius: "var(--radius)", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.03em" }}>
+                    Build This Server →
                   </div>
-                  <div style={{ fontSize: "0.68rem", color: "var(--fg-muted)", textAlign: "center", marginTop: "6px" }}>InterServer · New York</div>
                 </div>
               </div>
             </a>
 
             {/* ── InterServer: AMD RYZEN 9950X ── */}
             <a href="https://www.interserver.net/r/1063142" target="_blank" rel="noopener noreferrer sponsored" style={{ textDecoration: "none" }}>
-              <div className="card" style={{ height: "100%", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                <div style={{ padding: "20px 20px 0", flexGrow: 1 }}>
-                  <h3 style={{ fontSize: "1.15rem", color: "#2563EB", textAlign: "center", marginBottom: "4px" }}>AMD RYZEN 9950X</h3>
-                  <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
-                    <span style={{ fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#2563EB", background: "#EFF6FF", padding: "2px 10px", borderRadius: "20px" }}>AMD RYZEN</span>
-                  </div>
-                  <div style={{ textAlign: "center", marginBottom: "16px" }}>
-                    <div style={{ fontSize: "2rem", fontWeight: 900, color: "#2563EB", fontFamily: "var(--font-archivo), sans-serif", letterSpacing: "-0.03em" }}>156,475</div>
-                    <div style={{ fontSize: "0.7rem", color: "var(--fg-muted)" }}>PassMark Score</div>
-                  </div>
-                  {["16 Cores on a single CPU", "96 GB Memory", "(4)HDD or (4)SSD or (2)NVMe", "1 Gbps Unmetered Bandwidth", "IPMI Console Access", "DDoS Protection"].map((f, i) => (
-                    <div key={i} style={{ fontSize: "0.82rem", color: "var(--fg-body)", padding: "7px 0", borderTop: "1px solid var(--border)", textAlign: "center" }}>{f}</div>
+              <div style={{
+                background: "#fff", border: "1px solid #FED7AA", borderTop: "4px solid var(--accent)",
+                borderRadius: "var(--radius)", overflow: "hidden", display: "flex", flexDirection: "column",
+                height: "100%", transition: "box-shadow 0.2s, transform 0.15s",
+                boxShadow: "0 2px 8px rgba(242,101,34,0.08)",
+              }} className="hw-card">
+                <div style={{ padding: "14px 16px 12px", background: "linear-gradient(135deg, var(--accent-light) 0%, #fff 70%)" }}>
+                  <div style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent)", marginBottom: "5px" }}>InterServer · New York</div>
+                  <h3 style={{ fontSize: "0.95rem", fontWeight: 900, color: "var(--fg)", lineHeight: 1.25, marginBottom: "6px" }}>AMD RYZEN 9950X</h3>
+                  <span style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--accent-dark)", background: "var(--accent-light)", padding: "2px 8px", borderRadius: "20px" }}>AMD RYZEN</span>
+                </div>
+                <div style={{ padding: "10px 16px", borderTop: "1px solid #FED7AA", borderBottom: "1px solid var(--border)" }}>
+                  <div style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--fg-dim)", marginBottom: "1px" }}>PassMark Score</div>
+                  <div style={{ fontSize: "1.5rem", fontWeight: 900, color: "var(--accent)", fontFamily: "var(--font-archivo), sans-serif", letterSpacing: "-0.03em", lineHeight: 1 }}>156,475</div>
+                </div>
+                <div style={{ padding: "4px 0", flexGrow: 1 }}>
+                  {["16 Cores / single CPU", "96 GB Memory", "(4) HDD / SSD / NVMe", "1 Gbps Unmetered BW", "IPMI Console Access", "DDoS Protection"].map((f, i) => (
+                    <div key={i} style={{ fontSize: "0.78rem", color: "var(--fg-body)", padding: "6px 16px", borderBottom: "1px solid var(--border)", display: "flex", alignItems: "center", gap: "7px" }}>
+                      <span style={{ color: "var(--accent)", fontSize: "0.6rem", flexShrink: 0 }}>▸</span>{f}
+                    </div>
                   ))}
                 </div>
-                <div style={{ padding: "16px 20px 20px" }}>
-                  <div style={{ textAlign: "center", marginBottom: "12px" }}>
-                    <span style={{ fontSize: "0.78rem", color: "var(--fg-dim)" }}>Starting at: </span>
-                    <span style={{ fontSize: "1.5rem", fontWeight: 900, color: "#2563EB", fontFamily: "var(--font-archivo), sans-serif" }}>$183</span>
-                    <span style={{ fontSize: "0.78rem", color: "var(--fg-dim)" }}>/mo</span>
+                <div style={{ padding: "12px 14px" }}>
+                  <div style={{ fontSize: "0.7rem", color: "var(--fg-dim)", textAlign: "center", marginBottom: "6px" }}>
+                    Starting at <strong style={{ color: "var(--fg)" }}>$183/mo</strong>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "11px", background: "#2563EB", color: "#fff", borderRadius: "var(--radius)", fontWeight: 700, fontSize: "0.875rem", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-                    Build This Server
+                  <div style={{ background: "var(--accent)", color: "#fff", textAlign: "center", padding: "9px 12px", borderRadius: "var(--radius)", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.03em" }}>
+                    Build This Server →
                   </div>
-                  <div style={{ fontSize: "0.68rem", color: "var(--fg-muted)", textAlign: "center", marginTop: "6px" }}>InterServer · New York</div>
                 </div>
               </div>
             </a>

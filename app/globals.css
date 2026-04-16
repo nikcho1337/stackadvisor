@@ -279,6 +279,7 @@ a:hover { color: var(--accent); }
   .grid-2     { grid-template-columns: 1fr !important; }
   .hero-side  { display: none !important; }
   .grid-3     { grid-template-columns: 1fr !important; }
+  .grid-4     { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
   .grid-5     { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
   .footer-grid  { grid-template-columns: 1fr 1fr !important; gap: 32px 24px !important; }
   .footer-brand { grid-column: 1 / -1 !important; }
@@ -289,7 +290,14 @@ a:hover { color: var(--accent); }
 
 @media (max-width: 480px) {
   .footer-grid { grid-template-columns: 1fr !important; }
+  .grid-4      { grid-template-columns: 1fr !important; }
   .grid-5      { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* ─── HARDWARE CARD HOVER ──────────────────────────────────── */
+.hw-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
 }
 
 /* ─── PROSE (article body) ──────────────────────────────────── */
