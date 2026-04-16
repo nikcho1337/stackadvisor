@@ -290,6 +290,7 @@ a:hover { color: var(--accent); }
   .review-card        { grid-template-columns: 64px 1fr !important; gap: 16px !important; padding: 16px 18px !important; }
   .review-card-cta    { display: none !important; }
   .announce-btn       { display: none !important; }
+  .announce-flags     { display: none !important; }
 }
 
 @media (max-width: 480px) {

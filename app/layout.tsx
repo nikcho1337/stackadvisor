@@ -63,7 +63,7 @@ export default function RootLayout({
               fontSize: "0.62rem", fontWeight: 700, textTransform: "uppercase",
               letterSpacing: "0.08em", padding: "2px 8px", borderRadius: "4px",
             }}>New</span>
-            <span style={{
+            <span className="announce-flags" style={{
               display: "flex", alignItems: "center", gap: "4px",
               background: "rgba(255,255,255,0.12)", borderRadius: "4px",
               padding: "3px 8px",
@@ -71,8 +71,8 @@ export default function RootLayout({
               <img src="/flags/us.png" height="13" width="13" alt="US" style={{ display: "block" }} />
               <img src="/flags/br.png" height="13" width="13" alt="BR" style={{ display: "block" }} />
             </span>
-            <span style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.92)", fontWeight: 500 }}>
-              InterServer VPS from <strong style={{ color: "#fff" }}>$3/mo</strong> — price locked forever. No renewal surprises.
+            <span style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.92)", fontWeight: 500, whiteSpace: "nowrap" }}>
+              InterServer VPS from <strong style={{ color: "#fff" }}>$3/mo</strong> — price locked forever.
             </span>
             <a href="/reviews/interserver-vps-review" className="announce-btn" style={{
               fontSize: "0.78rem", fontWeight: 700, color: "#fff",
