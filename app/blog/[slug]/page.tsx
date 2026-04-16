@@ -56,7 +56,7 @@ export default async function ArticlePage({ params }: Props) {
       {article.image && (
         <div style={{ background: "var(--bg-white)", borderBottom: "1px solid var(--border)" }}>
           <div className="container" style={{ padding: "0 24px" }}>
-            <div style={{ position: "relative", width: "100%", height: "420px", borderRadius: "0 0 var(--radius) var(--radius)", overflow: "hidden" }}>
+            <div style={{ position: "relative", width: "100%", height: "clamp(200px, 40vw, 420px)", borderRadius: "0 0 var(--radius) var(--radius)", overflow: "hidden" }}>
               <Image
                 src={article.image}
                 alt={article.imageAlt}
@@ -73,7 +73,7 @@ export default async function ArticlePage({ params }: Props) {
       {/* Body */}
       <div style={{ background: "var(--bg)", padding: "56px 0" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: "56px", alignItems: "start" }}>
+          <div className="article-body-grid" style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: "56px", alignItems: "start" }}>
 
             {/* Article */}
             <article>
@@ -93,7 +93,7 @@ export default async function ArticlePage({ params }: Props) {
             </article>
 
             {/* Sidebar */}
-            <div style={{ position: "sticky", top: "80px", display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div className="article-sidebar" style={{ position: "sticky", top: "80px", display: "flex", flexDirection: "column", gap: "16px" }}>
               {relatedTools.length > 0 && (
                 <div style={{ background: "var(--bg-white)", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "24px" }}>
                   <div className="label" style={{ marginBottom: "16px" }}>Featured Tools</div>
