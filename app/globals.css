@@ -287,7 +287,7 @@ a:hover { color: var(--accent); }
   .review-sidebar     { order: -1; }
   .footer-grid        { grid-template-columns: 1fr 1fr !important; gap: 32px 24px !important; }
   .footer-brand       { grid-column: 1 / -1 !important; }
-  .review-card        { grid-template-columns: 64px 1fr !important; gap: 16px !important; }
+  .review-card        { grid-template-columns: 64px 1fr !important; gap: 16px !important; padding: 16px 18px !important; }
   .review-card-cta    { display: none !important; }
   .announce-btn       { display: none !important; }
 }
