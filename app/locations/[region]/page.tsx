@@ -58,7 +58,7 @@ export default async function LocationPage({ params }: Props) {
           <div style={{ display: "grid", gap: "14px" }}>
             {locTools.map((tool) => (
               <Link key={tool.slug} href={`/reviews/${tool.slug}`} style={{ textDecoration: "none" }}>
-                <div className="card" style={{ padding: "24px 28px", display: "grid", gridTemplateColumns: "80px 1fr auto", gap: "24px", alignItems: "center" }}>
+                <div className="card review-card" style={{ padding: "24px 28px", display: "grid", gridTemplateColumns: "80px 1fr auto", gap: "24px", alignItems: "center" }}>
                   <div style={{ textAlign: "center" }}>
                     <div className="score-num" style={{ fontSize: "2rem" }}>{tool.rating.toFixed(1)}</div>
                     <div className="label">/5.0</div>
@@ -84,7 +84,7 @@ export default async function LocationPage({ params }: Props) {
                       ))}
                     </div>
                   </div>
-                  <div style={{ textAlign: "right" }}>
+                  <div className="review-card-cta" style={{ textAlign: "right" }}>
                     <div style={{ fontWeight: 600, marginBottom: "6px" }}>{tool.price}</div>
                     <div style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--accent)" }}>Read review →</div>
                   </div>
