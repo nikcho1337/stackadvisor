@@ -557,7 +557,7 @@ export default function HomePage() {
               { icon: "💸", heading: "Full Cost Transparency", body: "We document renewal pricing, bandwidth overages, and add-on costs. The number you see in a review is what you'll actually pay — not a promotional headline rate." },
               { icon: "🔧", heading: "Built by Practitioners", body: "Our reviews are written by engineers who run production infrastructure. We care about uptime SLAs, support quality, and egress pricing because we pay those bills ourselves." },
             ].map((item) => (
-              <div key={item.heading} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "12px", padding: "28px" }}>
+              <div key={item.heading} className="trust-card" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "12px", padding: "28px" }}>
                 <span style={{ fontSize: "1.8rem", display: "block", marginBottom: "14px" }}>{item.icon}</span>
                 <h3 style={{ fontSize: "1.1rem", color: "#fff", marginBottom: "10px" }}>{item.heading}</h3>
                 <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.5)", lineHeight: "1.75", margin: 0 }}>{item.body}</p>

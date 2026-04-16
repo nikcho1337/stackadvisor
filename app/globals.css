@@ -281,6 +281,7 @@ a:hover { color: var(--accent); }
   .grid-3             { grid-template-columns: 1fr !important; }
   .grid-4             { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
   .grid-5             { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+  .trust-card         { text-align: center !important; }
   .review-hero-grid   { grid-template-columns: 1fr !important; gap: 24px !important; }
   .review-body-grid   { grid-template-columns: 1fr !important; gap: 24px !important; }
   .review-sidebar     { order: -1; }
