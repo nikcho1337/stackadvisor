@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo_Black, Inter, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -83,6 +84,13 @@ export default function RootLayout({
             </a>
           </div>
         </div>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-QTN2LHL6WV" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-QTN2LHL6WV');
+        `}</Script>
         <Nav />
         <main style={{ flex: 1 }}>{children}</main>
         <Footer />
