@@ -58,7 +58,7 @@ export default async function ReviewPage({ params }: Props) {
             <span style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.7)" }}>{tool.name}</span>
           </nav>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "52px", alignItems: "start" }}>
+          <div className="review-hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "52px", alignItems: "start" }}>
 
             {/* Left */}
             <div>
@@ -112,7 +112,7 @@ export default async function ReviewPage({ params }: Props) {
             </div>
 
             {/* Right — rating + CTA card */}
-            <div style={{
+            <div className="review-sidebar" style={{
               background: "rgba(255,255,255,0.04)",
               border: "1px solid rgba(255,255,255,0.1)",
               borderRadius: "16px",
@@ -221,7 +221,7 @@ export default async function ReviewPage({ params }: Props) {
       {/* ── BODY ─────────────────────────────────────────────── */}
       <div style={{ background: "var(--bg)", padding: "56px 0" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: "48px", alignItems: "start" }}>
+          <div className="review-body-grid" style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: "48px", alignItems: "start" }}>
             <div>
 
               {/* Intro */}
@@ -258,7 +258,7 @@ export default async function ReviewPage({ params }: Props) {
               {/* Pros / Cons */}
               <section style={{ marginBottom: "40px" }}>
                 <h2 style={{ fontSize: "1.4rem", marginBottom: "16px" }}>Pros & Cons</h2>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                <div className="grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
                   <div style={{ background: "var(--green-light)", border: "1px solid rgba(22,163,74,0.2)", borderRadius: "var(--radius)", padding: "24px" }}>
                     <div style={{ fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--green-dark)", marginBottom: "14px" }}>
                       ✓ Advantages
@@ -304,7 +304,7 @@ export default async function ReviewPage({ params }: Props) {
               {/* Who for */}
               <section style={{ marginBottom: "40px" }}>
                 <h2 style={{ fontSize: "1.4rem", marginBottom: "16px" }}>Is it right for you?</h2>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                <div className="grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
                   <div style={{ background: "var(--green-light)", border: "1px solid rgba(22,163,74,0.25)", borderRadius: "var(--radius)", padding: "24px" }}>
                     <div style={{ fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--green-dark)", marginBottom: "10px" }}>
                       ✓ Recommended for
