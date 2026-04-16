@@ -551,7 +551,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "24px" }}>
+          <div className="grid-3" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "24px" }}>
             {[
               { icon: "📊", heading: "Real Benchmark Data", body: "Every review includes actual sysbench CPU scores, fio disk benchmarks, and network throughput numbers — not just specs copied from a provider's marketing page." },
               { icon: "💸", heading: "Full Cost Transparency", body: "We document renewal pricing, bandwidth overages, and add-on costs. The number you see in a review is what you'll actually pay — not a promotional headline rate." },
