@@ -168,11 +168,11 @@ export default function HomePage() {
         backgroundImage: "radial-gradient(circle, rgba(242,101,34,0.07) 1px, transparent 1px)",
         backgroundSize: "22px 22px",
       }}>
-        <div className="container">
-          <div style={{ display: "flex", alignItems: "center", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+        <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" as "touch" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "12px", justifyContent: "center", flexWrap: "nowrap", padding: "0 24px", minWidth: "max-content", margin: "0 auto" }}>
             <span className="label" style={{ color: "var(--fg-muted)", whiteSpace: "nowrap", marginRight: "8px" }}>Tested &amp; reviewed:</span>
             {tools.map((tool) => (
-              <Link key={tool.slug} href={`/reviews/${tool.slug}`} style={{ textDecoration: "none" }}>
+              <Link key={tool.slug} href={`/reviews/${tool.slug}`} style={{ textDecoration: "none", flexShrink: 0 }}>
                 <div style={{
                   display: "flex", alignItems: "center", gap: "10px",
                   padding: "7px 14px 7px 8px",
