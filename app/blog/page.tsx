@@ -70,7 +70,7 @@ export default function BlogPage() {
       {/* ── ARTICLES GRID ────────────────────────────────────── */}
       <div style={{ background: "var(--bg)", padding: "56px 0" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px" }}>
+          <div className="grid-2" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px" }}>
             {articles.map((article) => (
               <Link key={article.slug} href={`/blog/${article.slug}`} style={{ textDecoration: "none" }}>
                 <div className="card" style={{ padding: "32px 28px", height: "100%", display: "flex", flexDirection: "column", gap: "14px" }}>
