@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
+import FlagImg from "@/components/FlagImg";
 
 // ─── Dropdown data ────────────────────────────────────────────
 const REVIEWS_DROPDOWN = {
@@ -202,16 +203,31 @@ function NavItemDropdown({
   );
 }
 
-const MOBILE_LINKS = [
-  { href: "/reviews",             label: "All Reviews" },
-  { href: "/categories/vps",      label: "Cloud VPS" },
-  { href: "/categories/dedicated",label: "Dedicated Servers" },
-  { href: "/categories/shared",   label: "Shared Hosting" },
-  { href: "/categories/managed",  label: "Managed Services" },
-  { href: "/locations/us",        label: "🇺🇸 United States" },
-  { href: "/locations/latam",     label: "🌎 Latin America" },
-  { href: "/blog",                label: "Hosting Guides" },
-  { href: "/about",               label: "About" },
+const MOBILE_SECTIONS = [
+  {
+    heading: "Reviews",
+    links: [
+      { href: "/reviews",              label: "All Reviews" },
+      { href: "/categories/vps",       label: "Cloud VPS" },
+      { href: "/categories/dedicated", label: "Dedicated Servers" },
+      { href: "/categories/shared",    label: "Shared Hosting" },
+      { href: "/categories/managed",   label: "Managed Services" },
+    ],
+  },
+  {
+    heading: "By Region",
+    links: [
+      { href: "/locations/us",    label: "United States", flag: "us" },
+      { href: "/locations/latam", label: "Latin America", flag: "latam" },
+    ],
+  },
+  {
+    heading: "Resources",
+    links: [
+      { href: "/blog",   label: "Hosting Guides" },
+      { href: "/about",  label: "About" },
+    ],
+  },
 ];
 
 // ─── Main Nav ─────────────────────────────────────────────────
@@ -271,17 +287,28 @@ export default function Nav() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="nav-mobile-menu">
-          {MOBILE_LINKS.map((l) => (
-            <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)} style={{
-              fontSize: "0.95rem", fontWeight: 500, color: "var(--fg-body)",
-              padding: "11px 24px", borderRadius: "0",
-              borderBottom: "1px solid var(--border)",
-              display: "block",
-            }}>
-              {l.label}
-            </Link>
+          {MOBILE_SECTIONS.map((section, si) => (
+            <div key={section.heading}>
+              <div style={{
+                fontSize: "0.62rem", fontWeight: 700, textTransform: "uppercase",
+                letterSpacing: "0.1em", color: "var(--fg-muted)",
+                padding: "10px 24px 4px",
+                borderTop: si > 0 ? "1px solid var(--border)" : undefined,
+              }}>
+                {section.heading}
+              </div>
+              {section.links.map((l) => (
+                <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)} style={{
+                  fontSize: "0.95rem", fontWeight: 500, color: "var(--fg-body)",
+                  padding: "10px 24px", display: "flex", alignItems: "center", gap: "8px",
+                }}>
+                  {"flag" in l && l.flag && <FlagImg loc={l.flag} height={14} />}
+                  {l.label}
+                </Link>
+              ))}
+            </div>
           ))}
-          <div style={{ padding: "14px 24px" }}>
+          <div style={{ padding: "14px 24px", borderTop: "1px solid var(--border)" }}>
             <Link href="/reviews" className="btn-primary" style={{ width: "100%", justifyContent: "center" }} onClick={() => setMobileOpen(false)}>
               Compare Hosts →
             </Link>
