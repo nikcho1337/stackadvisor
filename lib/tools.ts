@@ -80,7 +80,7 @@ const INTERSERVER_AFFILIATE = "https://www.interserver.net/r/1063142";
 const INTERSERVER_LOGO = "https://s3-eu-west-1.amazonaws.com/tpd/logos/5a13ed300000ff0005b11098/0x0.png";
 
 const SERVERSP_AFFILIATE = "https://manager.serversp.com/aff.php?aff=17";
-const SERVERSP_LOGO = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoT_L8ltcRmC41XapowGy7xWurWkfd7l5oYg&s";
+const SERVERSP_LOGO = "/logos/serversp-icon.png";
 
 const CHERRYSERVERS_AFFILIATE = "https://www.cherryservers.com/?affiliate=0G8A5202";
 const CHERRYSERVERS_LOGO = "/logos/cherryservers-icon.png";
