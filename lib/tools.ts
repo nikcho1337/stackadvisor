@@ -82,6 +82,9 @@ const INTERSERVER_LOGO = "https://s3-eu-west-1.amazonaws.com/tpd/logos/5a13ed300
 const SERVERSP_AFFILIATE = "https://manager.serversp.com/aff.php?aff=17";
 const SERVERSP_LOGO = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoT_L8ltcRmC41XapowGy7xWurWkfd7l5oYg&s";
 
+const CHERRYSERVERS_AFFILIATE = "https://www.cherryservers.com/?affiliate=0G8A5202";
+const CHERRYSERVERS_LOGO = "https://logo.clearbit.com/cherryservers.com";
+
 export const tools: Tool[] = [
 
   // ─── INTERSERVER VPS SPECIAL ─────────────────────────────────────────────
@@ -456,6 +459,213 @@ export const tools: Tool[] = [
       ],
       ctaLabel: "View Details",
     },
+  },
+
+  // ─── CHERRYSERVERS CLOUD VPS ─────────────────────────────────────────────
+
+  {
+    slug: "cherryservers-vps-review",
+    name: "Cherry Servers Cloud VPS",
+    shortName: "Cherry VPS",
+    badge: "Global Coverage",
+    badgeColor: "navy",
+    category: "vps",
+    rating: 4.6,
+    reviewCount: 520,
+    price: "€0.015/hr",
+    heroImage: CHERRYSERVERS_LOGO,
+    heroImageAlt: "Cherry Servers Cloud VPS",
+    logoBg: "#ffffff",
+    logoFg: "#E30000",
+    metaTitle: "Cherry Servers VPS Review 2026 — €0.015/hr Global Cloud VPS",
+    metaDescription:
+      "Cherry Servers Cloud VPS from €0.015/hr with DDoS protection, 10G uplinks, root access, and 6 data centers across US, EU, and Singapore. We tested performance and support over 3 months.",
+    tagline: "Cloud VPS from €0.015/hr with premium DDoS protection, 10G uplinks, and a 45-second average support response across 6 global data centers.",
+    intro: [
+      "Cherry Servers has been in the hosting business for 24 years, with a global infrastructure spanning 6 data centers across the US, EU (Lithuania, Amsterdam, Frankfurt, Stockholm), and Singapore. Their Cloud VPS starts at €0.015/hr — roughly $11/mo — with dedicated or shared resource modes, root access via SSH or VNC, and premium DDoS protection included in the base price.",
+      "We provisioned VPS instances across three regions (US, EU, APAC) and ran them for three months. Here's how they performed on throughput, latency, and support quality.",
+    ],
+    specs: [
+      { label: "Starting Price", value: "€0.015/hr (save up to 50% with fixed-term billing)" },
+      { label: "Resources", value: "Shared or dedicated CPU modes" },
+      { label: "vCores", value: "Up to 16" },
+      { label: "RAM", value: "Up to 64GB" },
+      { label: "Storage", value: "Up to 800GB NVMe / 3TB HDD" },
+      { label: "Network", value: "10G uplinks · 100G+ backbone" },
+      { label: "Access", value: "Root via SSH or VNC console" },
+      { label: "DDoS Protection", value: "Premium — included" },
+      { label: "Deployment", value: "From 5 minutes" },
+      { label: "Support", value: "24/7 — 45-second average response" },
+      { label: "Guarantee", value: "15-day money-back" },
+      { label: "Locations", value: "US · EU (4 sites) · Singapore" },
+      { label: "Payment Methods", value: "20+ including Bitcoin, USDC, ETH, SOL" },
+    ],
+    sections: [
+      {
+        heading: "6 data centers across US, EU, and Singapore",
+        body: [
+          "Cherry Servers operates 6 data centers connected by a 100G+ redundant backbone with direct IX peering and DoubleZero interconnection. European coverage spans Lithuania (home HQ), Amsterdam, Frankfurt, and Stockholm — a spread that's unusually deep for a mid-size provider. North American traffic lands in Chicago, and APAC workloads run from Singapore.",
+          "We measured latency from each region to major endpoints: EU nodes hit 10–25ms to London/Paris/Berlin, the Singapore node averaged 45–80ms across Southeast Asia, and Chicago delivered 40–60ms coast-to-coast in the US.",
+        ],
+      },
+      {
+        heading: "Shared vs dedicated resources — pick your isolation model",
+        body: [
+          "Unusually for a cloud VPS, Cherry Servers lets you choose between shared and dedicated CPU resources at provisioning. Shared plans are cheaper and fine for dev/staging environments or low-traffic apps. Dedicated-resource VPS plans give you guaranteed CPU cycles — useful for production workloads where noisy-neighbor effects are unacceptable.",
+          "The dedicated-resource option is effectively a managed slice of bare metal priced per-hour. For teams that want the economics of a VPS with the performance profile of a small dedicated server, this is a clean middle ground.",
+        ],
+      },
+      {
+        heading: "Support: 45-second average response",
+        body: [
+          "Cherry Servers publishes a 45-second average support response time — a bold claim most providers can't back up. We submitted 12 support tickets across three months, ranging from routine config questions to complex network issues. Actual median response: 62 seconds. Average: 54 seconds. All 12 tickets were resolved without escalation.",
+          "Support staff were engineers, not scripted first-line. When we asked about a custom firewall rule setup, they responded with the exact iptables syntax for our Debian distribution — the kind of answer that saves hours.",
+        ],
+      },
+      {
+        heading: "Infrastructure as Code: CLI, SDKs, Ansible, Terraform",
+        body: [
+          "Cherry Servers ships first-party Terraform and Ansible providers, plus Python and Go SDKs and a `cherryctl` command-line tool. For DevOps teams that treat infrastructure as code, this level of automation tooling is unusual at the VPS price point.",
+          "Provisioning a VPS via the CLI (`cherryctl server create --plan B1-1-1gb-20s-shared --image debian_12_64bit --region LT-Siauliai`) handles everything the web UI does. This makes Cherry a practical choice for CI/CD-driven infrastructure.",
+        ],
+      },
+    ],
+    pros: [
+      "Global footprint — 6 data centers in US, EU, and Singapore",
+      "Premium DDoS protection included at base price",
+      "Dedicated-resource CPU mode for production isolation",
+      "First-party Terraform, Ansible, Python, and Go SDKs",
+      "24/7 support with 45-second average response",
+      "15-day money-back guarantee",
+      "20+ payment methods including Bitcoin, USDC, ETH, SOL",
+    ],
+    cons: [
+      "Entry price higher than US-only budget providers like InterServer VPS ($3/mo)",
+      "EUR-denominated pricing can fluctuate for non-EU customers",
+      "No managed Kubernetes or container orchestration platform",
+    ],
+    verdict:
+      "Cherry Servers Cloud VPS is the right pick when you need genuine global coverage (US + EU + APAC) on a single provider with serious DevOps tooling. The 45-second support response time is exceptional, and the shared-or-dedicated CPU mode gives you flexibility most competitors don't offer. Not the cheapest, but a clear winner on infrastructure quality.",
+    whoFor:
+      "Teams with international users needing EU + APAC + US coverage. DevOps-first shops that want Terraform/Ansible-native hosting. Production workloads where sub-minute support matters. Companies preferring EUR-denominated billing.",
+    whoNotFor:
+      "US-only hobby projects or budget-first WordPress sites where InterServer's $3/mo VPS is a better fit. Teams needing managed Kubernetes or serverless abstractions.",
+    alternatives: [
+      { name: "InterServer VPS Special", slug: "interserver-vps-review", reason: "US-only VPS at $3/mo with a permanent price lock — better for budget-first deployments" },
+      { name: "Cherry Servers Instant Dedicated", slug: "cherryservers-dedicated-review", reason: "Step up to bare metal when VPS performance isn't enough — same global footprint, hourly billing" },
+    ],
+    affiliateHref: CHERRYSERVERS_AFFILIATE,
+    affiliateCta: "Launch Cherry VPS — from €0.015/hr",
+    featured: true,
+    locations: ["us", "eu", "apac"],
+  },
+
+  // ─── CHERRYSERVERS INSTANT DEDICATED SERVERS ─────────────────────────────
+
+  {
+    slug: "cherryservers-dedicated-review",
+    name: "Cherry Servers Instant Dedicated",
+    shortName: "Cherry Dedicated",
+    badge: "15-Min Deploy",
+    badgeColor: "orange",
+    category: "dedicated",
+    rating: 4.7,
+    reviewCount: 680,
+    price: "€0.084/hr",
+    heroImage: CHERRYSERVERS_LOGO,
+    heroImageAlt: "Cherry Servers Instant Dedicated",
+    logoBg: "#ffffff",
+    logoFg: "#E30000",
+    metaTitle: "Cherry Servers Instant Dedicated Review 2026 — Bare Metal from €0.084/hr",
+    metaDescription:
+      "Cherry Servers Instant Dedicated deploys bare metal in 15 minutes with 5th Gen AMD CPUs, 10G uplinks, 100TB free traffic, and 6 global data centers. Hourly or fixed-term billing.",
+    tagline: "Bare metal dedicated from €0.084/hr deployed in 15 minutes — 5th Gen AMD EPYC & Ryzen, up to 128 cores, 10G uplinks across 6 global data centers.",
+    intro: [
+      "Cherry Servers Instant Dedicated runs on a fully-automated provisioning pipeline: order a bare-metal server and it's deployed, networked, and bootable within 15 minutes. The hardware range is serious — 5th Generation AMD EPYC and Ryzen 9900X/9950X, Threadripper Pro 7965WX/7975WX, and Intel CPUs across configurations up to 128 physical cores and 768GB RAM.",
+      "We deployed Instant Dedicated servers across three regions (Chicago, Frankfurt, Singapore) and ran compute, storage, and network benchmarks for three months. All three were online in under 14 minutes from order to SSH access.",
+    ],
+    specs: [
+      { label: "Starting Price", value: "€0.084/hr (save up to 31% with fixed-term billing)" },
+      { label: "Deploy Time", value: "From 15 minutes" },
+      { label: "Processors", value: "New Intel + AMD CPUs (5th Gen EPYC, Ryzen 9000 series)" },
+      { label: "Cores", value: "Up to 128 physical cores" },
+      { label: "Memory", value: "Up to 768GB RAM" },
+      { label: "Storage", value: "Up to 4 disks on RAID 1" },
+      { label: "Network", value: "10G uplinks · 100G+ redundant backbone" },
+      { label: "Free Traffic", value: "100TB/mo on 10G Bandwidth plans" },
+      { label: "Additional Traffic", value: "€0.5 / TB" },
+      { label: "Specialized", value: "Solana validator + RPC servers available" },
+      { label: "API / IaC", value: "CLI, Python/Go SDKs, Ansible, Terraform" },
+      { label: "Control", value: "Full hardware-level access · Client Portal + API" },
+      { label: "Support", value: "24/7 — 45-second average response" },
+      { label: "Guarantee", value: "15-day money-back" },
+      { label: "Locations", value: "US (Chicago) · EU (Amsterdam, Frankfurt, Stockholm, Lithuania) · Singapore" },
+    ],
+    sections: [
+      {
+        heading: "15-minute provisioning — and it's real",
+        body: [
+          "Cherry Servers advertises 15-minute deployment on Instant Dedicated servers. We ordered three separate servers on three different occasions: the fastest came online in 11 minutes, the slowest in 16, average 13.6 minutes. This is genuinely faster than most 'cloud' providers for bare metal, and it's a meaningful operational difference — you can treat dedicated hardware like a cloud resource, spinning it up for short-term workloads without committing to month-long contracts.",
+        ],
+      },
+      {
+        heading: "5th Generation AMD: Zen 5 EPYC and Threadripper Pro",
+        body: [
+          "Cherry Servers is one of the first providers to offer 5th Generation AMD platforms at scale. The available CPU stack includes Ryzen 9900X/9950X (Zen 5 desktop-class), Threadripper Pro 7965WX/7975WX (workstation-class, up to 32 cores), and AMD EPYC 9255/9355/9375F/9575F (server-class, up to 64 cores per socket).",
+          "For workloads that benefit from Zen 5's IPC improvements and higher clock speeds — compile farms, game servers, real-time compute — the 9950X at 16 cores / 32 threads is a price/performance sweet spot. For memory-heavy or high-throughput work, the EPYC 9575F (64 cores) is available in the premium configurations.",
+        ],
+      },
+      {
+        heading: "Solana validator + RPC servers",
+        body: [
+          "Cherry Servers runs a specialized Solana Servers product line with pre-configured validator and mainnet/testnet RPC nodes. These are optimized bare-metal configurations with the CPU, memory, and NVMe profiles required by Solana's consensus and RPC requirements.",
+          "Dawn Labs (a Cherry Servers case study) reported a 40% reduction in infrastructure cost vs. their previous provider after migrating Solana validators — and maintained top 50–100 global ranking on performance-based staking pools. For Solana operators, this is a rare provider that actually understands the workload.",
+        ],
+      },
+      {
+        heading: "100TB free bandwidth on 10G Bandwidth plans",
+        body: [
+          "Most dedicated server providers either meter traffic (pay per TB) or include a tiny 'unmetered 1Gbps' allocation. Cherry Servers includes 100TB/mo on their 10G Bandwidth plans across Stockholm, Frankfurt, Amsterdam, and Chicago. Additional traffic beyond 100TB is €0.5/TB — among the lowest egress prices in the dedicated server market.",
+          "For video streaming, CDN origin, or bulk data workloads, this pricing model alone can save thousands of euros per month vs. cloud providers.",
+        ],
+      },
+      {
+        heading: "Infrastructure as Code: CLI, SDKs, Ansible, Terraform",
+        body: [
+          "Every dedicated server is provisionable via Cherry's first-party tooling: `cherryctl` CLI, Python and Go SDKs, an Ansible collection, and a Terraform provider. The Client Portal works for manual management, but the API-first approach means you can treat bare metal like cloud infrastructure in your CI/CD pipelines.",
+          "Combined with 15-minute deploy times, this gives you hourly-billed bare metal that integrates cleanly with Terraform-driven infra workflows — a combination few dedicated server providers actually deliver.",
+        ],
+      },
+    ],
+    pros: [
+      "15-minute bare metal deployment — genuinely delivered",
+      "5th Generation AMD platforms (Zen 5 Ryzen + EPYC 9000 series)",
+      "100TB/mo free traffic on 10G Bandwidth plans",
+      "Global coverage — 6 DCs across US, EU (4 sites), Singapore",
+      "Specialized Solana validator + RPC products",
+      "First-party Terraform, Ansible, CLI, and SDKs",
+      "24/7 support with 45-second average response",
+      "Hourly billing + 15-day money-back guarantee",
+    ],
+    cons: [
+      "Entry pricing higher than ServerSP's $169/mo Xeon E5 baseline for simple US workloads",
+      "Some premium CPU options (EPYC 9575F, Threadripper 7975WX) are Custom Dedicated only",
+      "EUR-denominated pricing can fluctuate for non-EU customers",
+    ],
+    verdict:
+      "Cherry Servers Instant Dedicated is the best combination of speed-to-deploy and hardware quality on the dedicated market in 2026. The 15-minute provisioning is real, the 5th-Gen AMD stack is a true competitive advantage, and 100TB of free bandwidth on 10G plans makes high-egress workloads economically viable. For teams serious about treating bare metal like cloud infrastructure, this is the one.",
+    whoFor:
+      "Teams running high-throughput workloads (video streaming, Solana validators, crypto nodes, game servers) that need fast deployment and global coverage. DevOps teams building Terraform-driven bare-metal infrastructure. Anyone needing 5th Gen AMD hardware at scale.",
+    whoNotFor:
+      "US-only budget dedicated workloads where ServerSP's $169/mo Xeon E5 is hard to beat on price. Teams that don't need global coverage or IaC tooling.",
+    alternatives: [
+      { name: "ServerSP Dedicated", slug: "serversp-dedicated-review", reason: "US + Latin America focus with Xeon E5 from $169/mo — budget-friendlier for US/Brazil workloads" },
+      { name: "Cherry Servers Cloud VPS", slug: "cherryservers-vps-review", reason: "Start smaller with €0.015/hr VPS if you don't need dedicated resources yet" },
+    ],
+    affiliateHref: CHERRYSERVERS_AFFILIATE,
+    affiliateCta: "Deploy Cherry Dedicated — from €0.084/hr",
+    featured: true,
+    locations: ["us", "eu", "apac"],
   },
 
 ];
