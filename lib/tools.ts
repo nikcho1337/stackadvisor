@@ -558,6 +558,23 @@ export const tools: Tool[] = [
     affiliateCta: "Launch Cherry VPS — from €0.015/hr",
     featured: true,
     locations: ["us", "eu", "apac"],
+    hardwareBanner: {
+      badge: "Most Popular",
+      title: "Cherry VPS — Dedicated Resources",
+      description: "Dedicated-CPU cloud VPS with premium DDoS protection, root access, and global coverage across 6 data centers in the US, EU, and Singapore.",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80&auto=format&fit=crop",
+      imageAlt: "Cherry Servers cloud VPS data center",
+      featuresHeading: "Fully-Managed VPS",
+      features: [
+        "Up to **16 vCores** with dedicated CPU resources",
+        "Up to **64GB** DDR4 RAM",
+        "**800GB NVMe** storage (up to 3TB HDD)",
+        "**10G uplinks** + Premium DDoS protection",
+        "**Root access** via SSH or VNC console",
+        "Deploy in **5 minutes** — hourly billing",
+      ],
+      ctaLabel: "View VPS Plans",
+    },
   },
 
   // ─── CHERRYSERVERS INSTANT DEDICATED SERVERS ─────────────────────────────
@@ -666,6 +683,23 @@ export const tools: Tool[] = [
     affiliateCta: "Deploy Cherry Dedicated — from €0.084/hr",
     featured: true,
     locations: ["us", "eu", "apac"],
+    hardwareBanner: {
+      badge: "5th Gen AMD",
+      title: "AMD RYZEN 9950X",
+      description: "High-performance Zen 5 desktop-class CPU at data-center scale — ideal for compute-intensive workloads like game servers, compile farms, and real-time compute.",
+      image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&q=80&auto=format&fit=crop",
+      imageAlt: "AMD Ryzen 9950X processor",
+      featuresHeading: "High-Performance Hardware",
+      features: [
+        "**32 threads / 16 cores** @ up to 5.7GHz",
+        "**192GB** DDR5 RAM",
+        "**2x 1TB NVMe** (up to 3 disks)",
+        "**10Gbps** network · **100TB/mo** free traffic",
+        "Deploy in **15 minutes** · hourly billing",
+        "Available in **5 regions** (LT, NL, US, SE, DE)",
+      ],
+      ctaLabel: "View Server Options",
+    },
   },
 
 ];
