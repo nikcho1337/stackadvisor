@@ -83,7 +83,7 @@ const SERVERSP_AFFILIATE = "https://manager.serversp.com/aff.php?aff=17";
 const SERVERSP_LOGO = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoT_L8ltcRmC41XapowGy7xWurWkfd7l5oYg&s";
 
 const CHERRYSERVERS_AFFILIATE = "https://www.cherryservers.com/?affiliate=0G8A5202";
-const CHERRYSERVERS_LOGO = "https://logo.clearbit.com/cherryservers.com";
+const CHERRYSERVERS_LOGO = "/logos/cherryservers.svg";
 
 export const tools: Tool[] = [
 
