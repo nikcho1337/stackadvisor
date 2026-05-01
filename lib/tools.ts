@@ -280,9 +280,9 @@ export const tools: Tool[] = [
     heroImageAlt: "InterServer private email hosting",
     logoBg: "#ffffff",
     logoFg: "#6B7280",
-    metaTitle: "InterServer Email Hosting Review 2026 — Private Email at $2.50/mo?",
+    metaTitle: "InterServer Email Hosting Review 2026 — 25GB at $2.50/mo Forever",
     metaDescription:
-      "InterServer's private email hosting gives you 25GB mailboxes, Outlook/webmail access, 100% uptime, and email archiving at $2.50/mo with no price increases.",
+      "InterServer Private Email review: 25GB mailboxes, Outlook + webmail + mobile access, 100% uptime SLA, email archiving — $2.50/mo with a permanent price lock.",
     tagline: "25GB mailboxes, Outlook + webmail + mobile access, email archiving — private business email at $2.50/mo, permanently.",
     intro: [
       "Most business email options are either expensive (Google Workspace at $6+/user) or unreliable. InterServer's private email hosting sits in between: $2.50/mo for professional business email with 25GB mailboxes, Outlook/webmail/mobile access, 100% uptime guarantee, and email archiving built in.",
@@ -593,9 +593,9 @@ export const tools: Tool[] = [
     heroImageAlt: "Cherry Servers Instant Dedicated",
     logoBg: "#ffffff",
     logoFg: "#E30000",
-    metaTitle: "Cherry Servers Instant Dedicated Review 2026 — Bare Metal from €0.084/hr",
+    metaTitle: "Cherry Servers Dedicated Review 2026 — 15-Min Bare Metal, €0.084/hr",
     metaDescription:
-      "Cherry Servers Instant Dedicated deploys bare metal in 15 minutes with 5th Gen AMD CPUs, 10G uplinks, 100TB free traffic, and 6 global data centers. Hourly or fixed-term billing.",
+      "Cherry Servers Instant Dedicated review: bare metal deployed in 15 minutes, 5th-Gen AMD EPYC and Ryzen CPUs, 100TB free egress, and 6 global data centers — from €0.084/hr.",
     tagline: "Bare metal dedicated from €0.084/hr deployed in 15 minutes — 5th Gen AMD EPYC & Ryzen, up to 128 cores, 10G uplinks across 6 global data centers.",
     intro: [
       "Cherry Servers Instant Dedicated runs on a fully-automated provisioning pipeline: order a bare-metal server and it's deployed, networked, and bootable within 15 minutes. The hardware range is serious — 5th Generation AMD EPYC and Ryzen 9900X/9950X, Threadripper Pro 7965WX/7975WX, and Intel CPUs across configurations up to 128 physical cores and 768GB RAM.",

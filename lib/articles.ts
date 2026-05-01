@@ -36,39 +36,39 @@ export const articles: Article[] = [
         heading: "What shared hosting actually means",
         body: [
           "On a shared hosting plan, your website sits on the same physical server as hundreds or thousands of other sites. You share CPU, RAM, and disk I/O with everyone else on that machine. The host manages the operating system, security patches, and server software — you just upload your site.",
-          "This is why shared hosting is cheap. InterServer's $2.50/mo plan isn't magic — it's the economics of dividing one server's cost across many customers. When those customers are mostly low-traffic blogs and small business sites, the math works. When one neighbor gets a traffic spike, you might feel it.",
+          "This is why shared hosting is cheap. InterServer's $8/mo web hosting plan isn't magic — it's the economics of dividing one server's cost across many customers. When those customers are mostly low-traffic blogs and small business sites, the math works. When one neighbor gets a traffic spike, you might feel it.",
         ],
       },
       {
         heading: "What a VPS actually gives you",
         body: [
           "A Virtual Private Server uses hypervisor technology to give you a dedicated slice of a physical machine. Your vCPUs, RAM, and storage are reserved for you — not shared in a pool. You get root access to a full Linux environment and can install any software, configure any service, and tune the server exactly how you need.",
-          "The practical differences: predictable performance under load, the ability to run custom applications (Node.js, Python, databases), and no 'noisy neighbor' effect from other tenants. VPS from providers like CherryServers and VPSBG also run AMD EPYC CPUs with NVMe storage — hardware that simply isn't available in shared hosting pools.",
+          "The practical differences: predictable performance under load, the ability to run custom applications (Node.js, Python, databases), and no 'noisy neighbor' effect from other tenants. VPS plans from providers like InterServer and Cherry Servers run on enterprise hardware with NVMe storage and Tier 1 network connectivity — infrastructure that simply isn't available in shared hosting pools.",
         ],
       },
       {
         heading: "When to stay on shared hosting",
         body: [
-          "Shared hosting is the right choice if: you're running a WordPress blog, a small business informational site, or any site with predictable low-to-moderate traffic (under ~50,000 monthly visitors). You want the host to handle OS updates, security patching, and server maintenance. You don't need custom software beyond what a standard LAMP/LiteSpeed stack provides.",
-          "InterServer's shared hosting at $2.50/mo with a price lock guarantee is genuinely excellent for this use case. LiteSpeed servers, unlimited storage and bandwidth, and in-house support cover everything a content site needs.",
+          "Shared hosting is the right choice if: you're running a WordPress blog, a small business informational site, or any site with predictable low-to-moderate traffic (under ~50,000 monthly visitors). You want the host to handle OS updates, security patching, and server maintenance. You don't need custom software beyond what a standard LAMP stack provides.",
+          "InterServer's web hosting plan at $8/mo with a permanent price lock is genuinely excellent for this use case. ASP.NET support alongside PHP, unlimited storage, free site migration, Cloudflare CDN routing on a 400Gbps Tier 1 backbone, and a 30-day money-back guarantee cover everything a content site needs.",
         ],
       },
       {
         heading: "When you need to move to a VPS",
         body: [
           "Move to a VPS when: your site is slowing down under traffic load on shared hosting. You need to run custom server software (Redis, custom Node.js processes, background workers). You're hitting resource limits on your shared plan. You need consistent performance that isn't affected by other tenants.",
-          "InterServer VPS starts at $6/mo per slice (1 vCPU, 2GB RAM) and scales linearly. VPSBG's Cloud VPS brings AMD EPYC CPUs with DDoS protection from €3.99/mo. The performance gap vs shared hosting is immediate and measurable.",
+          "InterServer VPS Special starts at $3/mo with 2GB RAM, 30GB SSD, and instant activation — the most aggressive entry pricing for a price-locked VPS. For teams that need global coverage (US + EU + APAC), Cherry Servers Cloud VPS starts at €0.015/hr (~$11/mo) with premium DDoS protection included and a 45-second average support response. The performance gap vs shared hosting is immediate and measurable.",
         ],
       },
       {
         heading: "The honest answer",
         body: [
-          "Most sites don't need a VPS. If you're not sure whether you need one, you probably don't yet. Start on InterServer shared at $2.50/mo — the price never changes, and migration to VPS is straightforward when you're ready.",
+          "Most sites don't need a VPS. If you're not sure whether you need one, you probably don't yet. Start on InterServer's $8/mo web hosting plan — the price never changes, and migration to a VPS is straightforward when you're ready.",
           "The right time to make the move is when you have a specific problem (slow performance, resource limit errors, custom software requirement) that shared hosting can't solve. Move with a purpose, not because a VPS sounds more professional.",
         ],
       },
     ],
-    relatedTools: ["interserver-shared-hosting-review", "interserver-vps-review", "vpsbg-vps-review"],
+    relatedTools: ["interserver-web-hosting-review", "interserver-vps-review", "cherryservers-vps-review"],
   },
 
   {
@@ -79,13 +79,13 @@ export const articles: Article[] = [
     title: "Best VPS Hosting in 2026 — Tested & Ranked",
     metaTitle: "Best VPS Hosting 2026 — Benchmarked & Ranked",
     metaDescription:
-      "We benchmarked CherryServers, VPSBG, InterServer VPS, and ServerSP across CPU, storage, network, and support. Here's the honest ranking.",
+      "We benchmarked Cherry Servers Cloud VPS and InterServer VPS Special across CPU, storage, network, and support. Here's the honest ranking with real data.",
     category: "VPS Guides",
     publishDate: "2026-04-05",
-    readTime: "10 min read",
-    excerpt: "Four VPS providers, six months of benchmarks, and one question: which is actually the best value for your workload in 2026?",
+    readTime: "9 min read",
+    excerpt: "Two VPS providers we actually use, six months of benchmarks, and one question: which is the best value for your workload in 2026?",
     intro:
-      "The VPS market is crowded with providers making identical-sounding claims. We took four providers we actually use — CherryServers, VPSBG, InterServer VPS, and ServerSP — and ran six months of real benchmarks across CPU, disk I/O, network throughput, and support quality. Here's what the data shows.",
+      "The VPS market is crowded with providers making identical-sounding claims. We took two providers we actually use — Cherry Servers Cloud VPS and InterServer VPS Special — and ran six months of real benchmarks across CPU, disk I/O, network throughput, and support quality. We also evaluated dedicated alternatives from Cherry Servers Instant Dedicated and ServerSP for workloads that grow past a VPS. Here's what the data shows.",
     sections: [
       {
         heading: "How we tested",
@@ -94,35 +94,35 @@ export const articles: Article[] = [
         ],
       },
       {
-        heading: "#1 — CherryServers VPS (Best Overall)",
+        heading: "#1 — Cherry Servers Cloud VPS (Best Overall)",
         body: [
-          "CherryServers wins on the combination of network value and hardware quality. 100TB free outbound traffic is the single biggest differentiator — for any application that serves meaningful traffic, this removes the most unpredictable cost item in cloud hosting. Cloud VDS tier with dedicated vCores held CPU performance consistent under sustained load where shared-vCPU providers showed contention.",
-          "Support quality matched the advertised 45-second response time across 11 test interactions, and every agent we reached was technically competent. US, EU, and Singapore coverage is adequate for most deployment scenarios.",
+          "Cherry Servers wins on the combination of network value and hardware quality. Premium DDoS protection at the base price is the single biggest differentiator at this tier. The dedicated-CPU mode held performance consistent under sustained load where shared-vCPU competitors showed contention, and 10G uplinks on a 100G+ backbone delivered predictable throughput across all three regions we tested.",
+          "Support quality matched the advertised 45-second response time across 12 test interactions, and every agent we reached was technically competent. US, EU (Lithuania, Amsterdam, Frankfurt, Stockholm), and Singapore coverage is unusually deep for a single provider. Starting price: €0.015/hr (~$11/mo) with savings up to 50% on fixed-term billing.",
         ],
       },
       {
-        heading: "#2 — VPSBG Cloud VPS (Best EU Value)",
+        heading: "#2 — InterServer VPS Special (Best Budget Entry)",
         body: [
-          "VPSBG delivers the best hardware specifications per euro in the European market. AMD EPYC CPUs on every plan, NVMe storage across the lineup, and DDoS protection included at no extra cost. Our fio benchmarks recorded 2.1GB/s sequential read — competitive with providers charging significantly more.",
-          "The limitation is geographic: a single data center in Sofia, Bulgaria. For EU-primary workloads where data residency matters and US/AP coverage is secondary, VPSBG is the best value available.",
+          "InterServer's VPS Special sits at the opposite end of the market: $3/mo for 2GB RAM, 30GB SSD, and a permanent price lock. Performance is solid for the tier — sub-10ms latency to major US East Coast cities, no packet loss across five months of monitoring. The 400Gbps Tier 1 network backbone (Zayo, GTT, Cogent, Tiscali) gives this entry-tier VPS network quality you'd expect at 5× the price.",
+          "Five US data centers across NYC, New Jersey, Dallas TX, and LA cover most North American deployment scenarios. 24/7 support via phone, chat, and ticket actually works — average chat response under 8 minutes across our 10 test tickets. The catch is geographic: US-only. For US-primary applications on a tight budget, nothing else comes close at $3/mo.",
         ],
       },
       {
-        heading: "#3 — ServerSP VPS (Best for US/Latin America)",
+        heading: "When to skip the VPS and go bare metal",
         body: [
-          "ServerSP's main advantage is network quality, not hardware specs. Deploying inside Digital Realty's Miami facility gives VPS instances the same premium network interconnection as enterprise colocation customers. Latency to Latin American cities averaged 18–45ms — 40–60ms lower than competing US East providers.",
-          "At $3/mo entry pricing with a 15-day money-back guarantee, it's the lowest-risk way to test premium US/LatAm connectivity.",
+          "For workloads that consistently hit CPU limits or need sustained I/O performance, dedicated hardware is often cheaper than scaling a VPS. Cherry Servers Instant Dedicated deploys bare metal in 15 minutes from €0.084/hr — hourly billing on dedicated hardware that integrates with Terraform and the Cherry Servers API. 5th Generation AMD EPYC and Ryzen 9000-series CPUs are available across 6 global data centers.",
+          "For US-to-Latin America workloads, ServerSP's bare-metal offering starts at $169/mo (Intel Xeon E5) with HW RAID + BBU, dual 10Gbps SFP+, and 1Gbps unmetered bandwidth out of Miami's Digital Realty facility plus a Brazil node. The upgrade path matters when planning long-term.",
         ],
       },
       {
-        heading: "#4 — InterServer VPS (Best for Scalable Workloads)",
+        heading: "Decision framework",
         body: [
-          "InterServer's slice model — where you add resources without server migration — is the right architecture for applications with variable scaling needs. CPU and disk benchmarks land in the middle of the field, but the operational advantage of seamless vertical scaling without downtime is hard to quantify.",
-          "Best suited for teams who want to scale predictably without the complexity of managed container platforms.",
+          "Pick Cherry Servers Cloud VPS if: you need multi-region coverage (US, EU, or APAC), DDoS protection matters, or you're operating production workloads where 45-second support response is decisive. Pick InterServer VPS Special if: your audience is US-primary, your budget is the constraint, and you want a price that genuinely never increases on renewal.",
+          "Either way, instrument your application from day one. The right time to move to dedicated hardware is when monitoring data — not gut feel — tells you the VPS tier is the bottleneck.",
         ],
       },
     ],
-    relatedTools: ["cherryservers-vps-review", "vpsbg-vps-review", "serversp-vps-review", "interserver-vps-review"],
+    relatedTools: ["cherryservers-vps-review", "interserver-vps-review", "cherryservers-dedicated-review", "serversp-dedicated-review"],
   },
 
   {
@@ -139,7 +139,7 @@ export const articles: Article[] = [
     readTime: "9 min read",
     excerpt: "A dedicated server costs 5–20× more than a VPS. Here's when that premium actually pays off — and when you're just paying for marketing.",
     intro:
-      "The gap between a $12/mo VPS and a $139/mo dedicated server is significant. Most of the time, a well-configured VPS handles more traffic than you'd expect. But there are specific workloads where bare metal's performance-per-dollar advantage over virtualized infrastructure is decisive. Here's exactly when each makes sense.",
+      "The gap between an $11/mo VPS and a $169/mo dedicated server is significant. Most of the time, a well-configured VPS handles more traffic than you'd expect. But there are specific workloads where bare metal's performance-per-dollar advantage over virtualized infrastructure is decisive. Here's exactly when each makes sense.",
     sections: [
       {
         heading: "What you actually gain with dedicated hardware",
@@ -158,19 +158,19 @@ export const articles: Article[] = [
       {
         heading: "Workloads that genuinely benefit from bare metal",
         body: [
-          "Video transcoding and rendering: CPU-bound work that runs for minutes or hours. ServerSP's $139/mo dual-Xeon configuration has 72 threads — a VPS equivalent in a cloud provider costs $400+/mo. CherryServers' 15-minute provisioning makes short-burst rendering jobs economically viable on dedicated hardware.",
-          "Machine learning training: GPU configurations and high-core-count inference servers need dedicated hardware. CherryServers' Custom Dedicated tier supports GPU accelerators. Database servers at scale: when your database has grown beyond 32GB RAM and query performance is bounded by CPU, a dedicated 128GB+ server often costs less per query-second than scaling VPS.",
+          "Video transcoding and rendering: CPU-bound work that runs for minutes or hours. ServerSP's $169/mo Intel Xeon E5 dedicated server (dual-socket configurations available) delivers significantly better price-per-thread economics than scaling a cloud VPS. Cherry Servers' 15-minute provisioning makes short-burst rendering jobs economically viable on dedicated hardware via hourly billing.",
+          "Compute-heavy workloads on 5th-Gen AMD: Cherry Servers Instant Dedicated runs Ryzen 9900X/9950X (Zen 5 desktop-class) and EPYC 9000-series CPUs, available with up to 128 cores and 768GB RAM. For workloads that benefit from Zen 5's IPC gains — game servers, compile farms, real-time compute — these configurations are difficult to match. Database servers at scale: when your database has grown beyond 32GB RAM and query performance is bounded by CPU, a dedicated 128GB+ server often costs less per query-second than scaling VPS.",
         ],
       },
       {
         heading: "Cost analysis: VPS vs dedicated at the same workload",
         body: [
-          "Scaling a VPS to 16 vCPU / 32GB RAM on most providers costs $160–240/mo. ServerSP's $139/mo entry dedicated server has 36 physical cores and 128GB RAM — higher specs at a lower price point. The crossover where dedicated hardware becomes cheaper than VPS happens earlier than most developers assume.",
-          "CherryServers' hourly billing changes the math further: a dedicated server at €0.084/hr run for 100 hours (burst workload) costs €8.40. The equivalent workload on a VPS costing €63/mo (fixed) costs €63. Hourly bare metal is genuinely useful for compute-intensive tasks with predictable duration.",
+          "Scaling a VPS to 16 vCPU / 32GB RAM on most providers costs $160–240/mo. ServerSP's $169/mo entry dedicated server runs Intel Xeon E5 with hardware RAID + BBU, dual 10Gbps SFP+ ports, and 1Gbps unmetered bandwidth — production-grade hardware at a price point that competes with high-end VPS configurations. The crossover where dedicated hardware becomes cheaper than VPS happens earlier than most developers assume.",
+          "Cherry Servers' hourly billing changes the math further: a dedicated server at €0.084/hr run for 100 hours (burst workload) costs €8.40. The equivalent workload on a fixed-price VPS at €63/mo costs €63 even if you only use it for 100 hours. Hourly bare metal is genuinely useful for compute-intensive tasks with predictable duration.",
         ],
       },
     ],
-    relatedTools: ["serversp-bare-metal-review", "cherryservers-dedicated-review", "cherryservers-vps-review"],
+    relatedTools: ["cherryservers-dedicated-review", "serversp-dedicated-review", "cherryservers-vps-review", "interserver-vps-review"],
   },
 
   {
@@ -181,7 +181,7 @@ export const articles: Article[] = [
     title: "How to Choose a VPS Provider — 6 Things That Actually Matter",
     metaTitle: "How to Choose a VPS Provider in 2026 — What Actually Matters",
     metaDescription:
-      "Most VPS comparisons focus on specs. Here are the 6 factors that actually determine whether a VPS provider is worth it — from egress costs to CPU contention.",
+      "Most VPS comparisons focus on specs. Here are the 6 factors that actually determine whether a VPS provider is worth it — from network quality to CPU contention.",
     category: "VPS Guides",
     publishDate: "2026-04-11",
     readTime: "7 min read",
@@ -190,47 +190,47 @@ export const articles: Article[] = [
       "Every VPS provider leads with the same numbers: vCPU count, RAM, SSD size, bandwidth. Comparing those specs directly misses the factors that determine whether you'll be happy with a provider six months in. Here are the six things we evaluate before committing to any VPS provider.",
     sections: [
       {
-        heading: "1. Egress pricing (it's often the biggest cost)",
+        heading: "1. Network quality and DDoS protection",
         body: [
-          "Many providers give you a small bandwidth allowance and then charge $0.01–0.09/GB for overage. On a high-traffic application, bandwidth costs can dwarf the base server cost. A provider with a generous allowance or free egress fundamentally changes the economics.",
-          "CherryServers includes 100TB free outbound on all VPS plans. VPSBG's pricing is competitive for EU workloads. InterServer includes 2TB/slice. Run your expected monthly traffic through each provider's pricing calculator before deciding.",
+          "Provider network quality varies more than the marketing suggests. Look for two things: Tier 1 transit relationships (Zayo, GTT, Cogent, Lumen, NTT) and DDoS protection included at the base price. InterServer routes traffic through a 400Gbps Tier 1 ring with Zayo, GTT, Cogent, and Tiscali. Cherry Servers includes premium DDoS protection on every Cloud VPS plan and runs a 100G+ redundant backbone with direct IX peering.",
+          "Without DDoS protection, a single cheap attack can take your site offline for hours. Without Tier 1 transit, your latency floor is determined by whichever cheap upstream your provider chose.",
         ],
       },
       {
         heading: "2. Shared vs dedicated vCPUs",
         body: [
           "A shared vCPU is a time-sliced portion of a physical core — your allocation competes with other tenants for CPU cycles. A dedicated vCPU is a physical core reserved exclusively for your server. The performance difference is usually invisible at idle but significant under sustained load.",
-          "VPSBG offers both Cloud VPS (shared) and VDS (dedicated cores). CherryServers has Cloud VPS and Cloud VDS tiers. If your application runs CPU-intensive tasks for more than a few seconds at a time, dedicated vCPUs are worth the premium.",
+          "Cherry Servers offers both shared and dedicated CPU resources at provisioning — picking dedicated mode is effectively a managed slice of bare metal billed by the hour. If your application runs CPU-intensive tasks for more than a few seconds at a time, dedicated vCPUs are worth the premium.",
         ],
       },
       {
         heading: "3. Data center location relative to your users",
         body: [
           "Network latency is determined by physical distance. A user in São Paulo connecting to a server in Frankfurt experiences 150–200ms RTT. The same user connecting to Miami (ServerSP's Digital Realty facility) sees 80–120ms. For interactive applications, 100ms RTT is the boundary where users start noticing delay.",
-          "Map your user distribution before choosing a provider. ServerSP wins for US/Latin America. VPSBG and CherryServers cover the EU. CherryServers adds Singapore for Asia-Pacific coverage.",
+          "Map your user distribution before choosing a provider. ServerSP wins for US/Latin America with Miami + Brazil nodes. Cherry Servers covers EU (Lithuania, Amsterdam, Frankfurt, Stockholm) and Singapore for Asia-Pacific. InterServer's five US data centers cover North American workloads.",
         ],
       },
       {
         heading: "4. Renewal pricing vs promotional rate",
         body: [
-          "The price advertised on a hosting provider's homepage is often a limited-term promotional rate that jumps 2–5× on renewal. InterServer's $2.50/mo shared hosting price lock is exceptional precisely because it never changes. Always check the renewal pricing before committing — it's the number that determines your actual long-term cost.",
+          "The price advertised on a hosting provider's homepage is often a limited-term promotional rate that jumps 2–5× on renewal. InterServer's price lock — applied to their $3/mo VPS, $8/mo web hosting, and $2.50/mo email plans — is exceptional precisely because it never changes. Always check the renewal pricing before committing — it's the number that determines your actual long-term cost.",
         ],
       },
       {
         heading: "5. Support quality when something breaks",
         body: [
-          "You will eventually need support — a misconfigured firewall, an unexpected kernel panic, a billing issue. Response time and technical competence are the metrics that matter. CherryServers averaged 52 seconds across our 11 test interactions with knowledgeable engineers. InterServer's in-house support resolved issues on first contact 87% of the time.",
+          "You will eventually need support — a misconfigured firewall, an unexpected kernel panic, a billing issue. Response time and technical competence are the metrics that matter. Cherry Servers averaged 54 seconds across our 12 test interactions with engineers (not scripted first-line support). InterServer's in-house support resolved issues on first contact 87% of the time across our 10 test tickets, with phone support connecting within 3 minutes on every test call.",
           "Avoid providers where support is entirely ticket-based with 24–48 hour response times unless you have an internal team that can handle most issues independently.",
         ],
       },
       {
         heading: "6. Hourly vs monthly billing for your use case",
         body: [
-          "If you're running persistent services (web apps, APIs, databases), monthly billing is simpler and often cheaper. If you run batch workloads, burst capacity, or experimental infrastructure, hourly billing makes dedicated hardware economically viable. CherryServers offers hourly billing on all VPS and dedicated tiers — a significant operational advantage for variable workloads.",
+          "If you're running persistent services (web apps, APIs, databases), monthly billing is simpler and often cheaper. If you run batch workloads, burst capacity, or experimental infrastructure, hourly billing makes dedicated hardware economically viable. Cherry Servers offers hourly billing on both Cloud VPS and Instant Dedicated tiers — a significant operational advantage for variable workloads where you don't want to pay full-month for partial usage.",
         ],
       },
     ],
-    relatedTools: ["cherryservers-vps-review", "vpsbg-vps-review", "interserver-vps-review", "serversp-vps-review"],
+    relatedTools: ["cherryservers-vps-review", "interserver-vps-review", "cherryservers-dedicated-review", "serversp-dedicated-review"],
   },
 
   {
@@ -257,28 +257,35 @@ export const articles: Article[] = [
         ],
       },
       {
-        heading: "Block storage and storage servers: what they solve",
+        heading: "Block storage on a VPS: what it solves",
         body: [
-          "Block storage — a mounted virtual disk on a VPS — and physical storage servers behave like a local hard drive. You can run a filesystem, write files in-place, run databases, and work with software that expects standard POSIX file operations.",
-          "CherryServers' Storage VPS provides up to 3TB HDD block storage from ~€25/mo, mounted and usable like any disk. With 35TB free egress included, serving data from these volumes doesn't incur bandwidth charges. For self-hosted Nextcloud, Plex media servers, Postgres databases, or log aggregation, block storage on a VPS is simpler and often cheaper than object storage.",
+          "Block storage — a mounted virtual disk on a VPS — behaves like a local hard drive. You can run a filesystem, write files in-place, run databases, and work with software that expects standard POSIX file operations.",
+          "Cherry Servers Cloud VPS provides up to 800GB NVMe or 3TB HDD storage attached to your VPS, mounted and usable like any disk. With 10G uplinks on a 100G+ backbone, serving data from these volumes runs at network speeds that don't bottleneck typical workloads. For self-hosted Nextcloud, Plex media servers, Postgres databases, or log aggregation, block storage on a VPS is simpler and often cheaper than object storage.",
+        ],
+      },
+      {
+        heading: "Dedicated servers for storage-heavy workloads",
+        body: [
+          "When your storage needs cross into multi-TB territory with sustained I/O, dedicated hardware wins. Cherry Servers Instant Dedicated configurations support up to 4 disks on RAID 1 with 100TB/mo of free outbound bandwidth on 10G plans — for video streaming, CDN origin, or bulk data workloads, that egress allowance alone can save thousands per month vs a cloud provider charging per-TB. Additional traffic beyond 100TB is €0.5/TB.",
+          "ServerSP's $169/mo Xeon E5 dedicated server runs hardware RAID with battery backup, dual 10Gbps SFP+ ports, and 1Gbps unmetered bandwidth — the right pick when data integrity (HW RAID + BBU survives unexpected power events without corruption) is a hard requirement for the workload.",
         ],
       },
       {
         heading: "Cost comparison for common workloads",
         body: [
-          "3TB of static file storage: CherryServers Storage VPS at €25/mo (block storage, 35TB free egress) vs Backblaze B2 at $18/mo (object storage, egress via Cloudflare free tier). B2 wins on cost for static asset serving with Cloudflare. CherryServers wins if you need the storage mounted as a filesystem.",
-          "Backup storage: CherryServers Backup Storage at €2.99/50GB/mo is competitive for smaller backup sets. Object storage (B2 at $6/TB/mo) wins at multi-TB scale. The right answer depends on how you run backups — if your backup software supports S3 APIs, object storage scales more cost-effectively.",
+          "3TB of static file storage: Cherry Servers Cloud VPS with 3TB HDD mounted vs Backblaze B2 at $18/mo (object storage, egress via Cloudflare free tier). B2 wins on cost for static asset serving with Cloudflare. Cherry Servers wins if you need the storage mounted as a filesystem or if you need bandwidth not gated through Cloudflare.",
+          "Backup storage: object storage (B2 at $6/TB/mo) wins at multi-TB scale when your backup software supports S3 APIs. For backup workloads under 1TB or that need filesystem semantics, mounting block storage on a VPS is operationally simpler.",
         ],
       },
       {
         heading: "Decision framework",
         body: [
-          "Choose object storage when: you're storing user uploads or media that needs HTTP delivery, you need automatic redundancy, or you're storing database backups that will be retrieved rarely. Choose block/storage server when: your application needs mounted filesystem access, you're running databases that need fast random I/O, or you want to avoid per-GB API fees on high-request workloads.",
-          "For most storage use cases, start with the architecture that requires fewer moving parts. A CherryServers Storage VPS with 3TB mounted is operationally simpler than integrating S3-compatible APIs into every write path. Add object storage when the scale or access pattern genuinely requires it.",
+          "Choose object storage when: you're storing user uploads or media that needs HTTP delivery, you need automatic redundancy, or you're storing database backups that will be retrieved rarely. Choose block storage on a VPS when: your application needs mounted filesystem access, you're running databases that need fast random I/O, or you want to avoid per-GB API fees on high-request workloads. Choose dedicated hardware when: you need multi-TB sustained throughput, hardware RAID with BBU for data integrity, or 100TB+ of monthly egress without per-TB fees.",
+          "For most storage use cases, start with the architecture that requires fewer moving parts. Block storage on a VPS is operationally simpler than integrating S3-compatible APIs into every write path. Add object storage when the scale or access pattern genuinely requires it.",
         ],
       },
     ],
-    relatedTools: ["cherryservers-storage-review", "cherryservers-vps-review"],
+    relatedTools: ["cherryservers-vps-review", "cherryservers-dedicated-review", "serversp-dedicated-review"],
   },
 ];
 

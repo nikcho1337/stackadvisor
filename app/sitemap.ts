@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
-import { tools } from "@/lib/tools";
+import { tools, getActiveLocations, type Category } from "@/lib/tools";
 import { articles } from "@/lib/articles";
 
 const BASE_URL = "https://stackadvisor.io";
+const CATEGORIES: Category[] = ["shared", "vps", "dedicated", "storage", "managed"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const toolPages = tools.map((t) => ({
@@ -19,8 +20,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const categoryPages = ["crm", "ecommerce", "hosting", "ai-tools", "services"].map((cat) => ({
+  const categoryPages = CATEGORIES.map((cat) => ({
     url: `${BASE_URL}/categories/${cat}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  const locationPages = getActiveLocations().map((loc) => ({
+    url: `${BASE_URL}/locations/${loc}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.7,
@@ -46,12 +54,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${BASE_URL}/locations`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
       url: `${BASE_URL}/about`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.5,
     },
     ...categoryPages,
+    ...locationPages,
     ...toolPages,
     ...articlePages,
   ];
